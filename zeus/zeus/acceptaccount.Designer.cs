@@ -1,0 +1,80 @@
+﻿namespace zeus
+{
+    partial class acceptaccount
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.flush_timer = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // flush_timer
+            // 
+            this.flush_timer.Enabled = true;
+            this.flush_timer.Interval = 180000;
+            this.flush_timer.Tick += new System.EventHandler(this.flush_timer_Tick_1);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(221, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(436, 155);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // acceptaccount
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimizeBox = false;
+            this.Name = "acceptaccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "IPayBox - Zeus - Подтверждение номера";
+            this.Load += new System.EventHandler(this.acceptaccount_Load);
+            this.DoubleClick += new System.EventHandler(this.acceptaccount_Click);
+            this.Activated += new System.EventHandler(this.acceptaccount_Activated);
+            this.Click += new System.EventHandler(this.acceptaccount_Click);
+            this.ResumeLayout(false);
+
+        }
+
+      
+        #endregion
+
+        private System.Windows.Forms.Timer flush_timer;
+        private System.Windows.Forms.Label label1;
+    }
+}

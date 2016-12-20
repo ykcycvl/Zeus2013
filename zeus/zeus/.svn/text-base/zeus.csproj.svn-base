@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32B1994D-CF9D-4081-BF3C-AC30CE109386}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zeus</RootNamespace>
+    <AssemblyName>zeus</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ManifestCertificateThumbprint>D58B16C37759E0DBC85F7080E53B73618AD58D8B</ManifestCertificateThumbprint>
+    <ManifestKeyFile>zeus_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetZone>Custom</TargetZone>
+    <ExcludedPermissions>
+    </ExcludedPermissions>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>zeus.ico</ApplicationIcon>
+    <PublishUrl>http://localhost/zeus/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Acceptors, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Acceptors\Acceptors\bin\Debug\Acceptors.dll</HintPath>
+    </Reference>
+    <Reference Include="DotRas, Version=1.0.3392.15044, Culture=neutral, PublicKeyToken=b378f04384b7892a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Рабочий стол\WINXPSP2\DotRas.dll</HintPath>
+    </Reference>
+    <Reference Include="FRL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FR\FRL\bin\Debug\FRL.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.8.4.22, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DotNetZip-v1.8\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Printers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Printers\Printers\bin\Debug\Printers.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="wds, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\wds\wds\bin\Debug\wds.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="acceptaccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acceptaccount.Designer.cs">
+      <DependentUpon>acceptaccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API2\API.cs" />
+    <Compile Include="comiss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comiss.Designer.cs">
+      <DependentUpon>comiss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API2\GZipDecompress.cs" />
+    <Compile Include="flushform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flushform.Designer.cs">
+      <DependentUpon>flushform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClass\ChangeSystemTime.cs" />
+    <Compile Include="HelperClass\CRC32.cs" />
+    <Compile Include="edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit.Designer.cs">
+      <DependentUpon>edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="entermoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="entermoney.Designer.cs">
+      <DependentUpon>entermoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClass\Log.cs" />
+    <Compile Include="HelperClass\ProgressAnimator.cs" />
+    <Compile Include="HelperClass\Serializer.cs" />
+    <Compile Include="HelperClass\Settings.cs" />
+    <Compile Include="HelperClass\SyncTime.cs" />
+    <Compile Include="HelperClass\whitelist.cs" />
+    <Compile Include="API2\HTTP.cs" />
+    <Compile Include="API2\import.cs" />
+    <Compile Include="API2\Incass.cs" />
+    <Compile Include="API2\IncassHistory.cs" />
+    <Compile Include="info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="info.Designer.cs">
+      <DependentUpon>info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\AcceptorTestFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\AcceptorTestFrm.Designer.cs">
+      <DependentUpon>AcceptorTestFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\PrinterSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\PrinterSettings.Designer.cs">
+      <DependentUpon>PrinterSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\PrintOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\PrintOptions.Designer.cs">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\WhiteList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\WhiteList.designer.cs">
+      <DependentUpon>WhiteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\FRParametrs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\FRParametrs.Designer.cs">
+      <DependentUpon>FRParametrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\information.Designer.cs">
+      <DependentUpon>information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\log_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\log_view.Designer.cs">
+      <DependentUpon>log_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\net.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\net.Designer.cs">
+      <DependentUpon>net.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\PrintIncass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\PrintIncass.Designer.cs">
+      <DependentUpon>PrintIncass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\security.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\security.Designer.cs">
+      <DependentUpon>security.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main_menu.Designer.cs">
+      <DependentUpon>main_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="minigame.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="modem.cs" />
+    <Compile Include="monitoring.cs" />
+    <Compile Include="LoginForms\options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\options.Designer.cs">
+      <DependentUpon>options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API2\Pay.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="acceptaccount.resx">
+      <DependentUpon>acceptaccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comiss.resx">
+      <DependentUpon>comiss.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edit.resx">
+      <DependentUpon>edit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="entermoney.resx">
+      <DependentUpon>entermoney.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flushform.resx">
+      <DependentUpon>flushform.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="info.resx">
+      <DependentUpon>info.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\AcceptorTestFrm.resx">
+      <DependentUpon>AcceptorTestFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\PrinterSettings.resx">
+      <DependentUpon>PrinterSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\PrintOptions.resx">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\WhiteList.resx">
+      <DependentUpon>WhiteList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\FRParametrs.resx">
+      <DependentUpon>FRParametrs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\information.resx">
+      <DependentUpon>information.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\log_view.resx">
+      <DependentUpon>log_view.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\net.resx">
+      <DependentUpon>net.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\PrintIncass.resx">
+      <DependentUpon>PrintIncass.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\security.resx">
+      <DependentUpon>security.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main_menu.resx">
+      <DependentUpon>main_menu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\options.resx">
+      <DependentUpon>options.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thanks.resx">
+      <DependentUpon>thanks.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ScreenTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sendpays.cs" />
+    <Compile Include="send_incass.cs" />
+    <Compile Include="SMS.cs" />
+    <Compile Include="thanks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thanks.Designer.cs">
+      <DependentUpon>thanks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\interface.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="zeus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\work\remoteFR\remoteFR\remoteFR.csproj">
+      <Project>{AE2BDFA0-869B-4266-AA18-8EF82642EDB0}</Project>
+      <Name>remoteFR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\prim21k\prim21k.csproj">
+      <Project>{42A65E52-6F97-45EF-9973-10B37D3C3B0B}</Project>
+      <Name>prim21k</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

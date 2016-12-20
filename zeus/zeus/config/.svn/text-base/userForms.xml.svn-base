@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<formList>
+  <form name="test" background="zeus17\bg_main.png">
+    <buttons>
+      <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+      <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+      <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+    </buttons>
+    <labels>
+      <label location ="278;230" size="670;40" text-align="left" text="Введите " font-family="Miscrosoft Sans Serif" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase" />
+    </labels>
+    <images>
+      <img location="1018;30" src="zeus17\logo.png" />
+    </images>
+  </form>
+</formList>

@@ -1,0 +1,18 @@
+﻿ *******************************
+ [agent_jur_name]
+ [agent_inn]
+ Телефон провайдера: [provider_support_phone]
+ 
+ Телефон:[agent_support_phone]
+ Квитанция:[count_bill]
+ Терминал:[terminal_id]
+ Адрес:[trm_adress]
+ Дата:[date]
+
+ Провайдер: [prv_name]
+ Принято: [amount]
+ Зачислено: [to_amount]
+ Комиссия: [comiss]
+ [params]
+ Код операции: [txn_id]
+ *********************************

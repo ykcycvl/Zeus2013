@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FR.Atol">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgYAACAAAACAAQQAAAAAAQAEAAkAQAIAAAAQgAQACgI=</HashCode>
+      <FileName>Atol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FR.FiscalSettings" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="FR.FiscalSettings.SettingsChangedEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FiscalSettings.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIQgCAAAAAgAAhAAAAAAAUgAAAAAQIQ=</HashCode>
+      <FileName>FiscalSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FR.DeviceInfo" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAQAIAAAAABAAAAAAAAAAAgAAAAgAJA=</HashCode>
+      <FileName>IFR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FR.FiscalRegisters">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AyIAACAAAEAAgAQAAoIACQAEAAEAQAACRAAAgAYACgA=</HashCode>
+      <FileName>IFR.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="FR.IFiscalRegister" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAAAAAAAAAAAIAAQAEAAAAQAAAAAAAgAQACgA=</HashCode>
+      <FileName>IFR.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="FR.DeviceType" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAQAAAAAAAAAAAAAAAAAAAIAAAAggAAAAAAA=</HashCode>
+      <FileName>IFR.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FR.PasswordMode" Collapsed="true">
+    <Position X="4.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAgAAAAAQAEAAAAA=</HashCode>
+      <FileName>IFR.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

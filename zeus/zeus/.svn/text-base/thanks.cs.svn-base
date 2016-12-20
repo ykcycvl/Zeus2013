@@ -1,0 +1,335 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Xml;
+
+namespace zeus
+{
+    public partial class thanks : Form
+    {
+        PictureBox[] img = new PictureBox[10];
+        int img_count;
+        Label[] labels = new Label[10];
+        int labels_count;
+        //XmlElement xml_thanks;
+        string amount;
+        string to_amount;
+        string comission;
+        string account;
+        public thanks(string amount1, string to_amount1, string comission1, string account1)
+        {
+            amount = amount1;
+            to_amount = to_amount1;
+            comission = comission1;
+            account = account1;
+            InitializeComponent();
+        }
+
+        private void thanks_Load(object sender, EventArgs e)
+        {
+            Ipaybox.AddToLog(Ipaybox.Logs.Main, "Показываем форму `Спасибо`.");
+            this.Size = Ipaybox.Resolution;
+            if (Ipaybox.Inches == 17)
+                this.Location = new Point(0, 0);
+            try
+            {
+                _cursor.Hide();
+
+                if (!Ipaybox.Debug)
+                    this.TopMost = false;
+            }
+            catch { }
+            LoadThisForm();
+        }
+        private void LoadThisForm()
+        {
+            try
+            {
+               
+                XmlElement default_form = null;
+                XmlElement el = (XmlElement)Ipaybox.XML_Interface.SelectSingleNode("custom_forms");
+
+                for (int i = 0; i < el.ChildNodes.Count; i++)
+                {
+                    XmlElement row = (XmlElement)el.ChildNodes[i];
+                    if (row.Name == "provider" && row.GetAttribute("id") == "default")
+                    {
+                        for (int j = 0; j < row.ChildNodes.Count; j++)
+                        {
+                            XmlElement row1 = (XmlElement)row.ChildNodes[j];
+                           
+                            if (row1.Name == "form" && row1.GetAttribute("name").ToLower() == "thanks")
+                            {
+                                default_form = row1;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (default_form != null)
+                {
+                    Process_Form(default_form);
+                }
+                else
+                {
+                    ExitForm();
+                }
+
+            }
+            catch
+            {
+                Ipaybox.NeedToUpdateConfiguration = true;
+                Ipaybox.NeedUpdates.Config = true;
+                Ipaybox.Working = false;
+            }
+        }
+        private void Process_Form(XmlElement frm)
+        {
+            if (!string.IsNullOrEmpty(frm.GetAttribute("sound")))
+                Sound.Play(Ipaybox.StartupPath.TrimEnd('\\') + "\\sounds\\" + frm.GetAttribute("sound"));
+
+            XmlElement root = frm;
+
+            try
+            {
+                this.BackgroundImage = new Bitmap(Ipaybox.StartupPath + @"\" + root.GetAttribute("backgroundimage"));
+            }
+            catch
+            {
+
+                this.BackColor = Color.FromArgb(230, 230, 230);
+            }
+
+            int c = 0;
+
+            if (int.TryParse(root.GetAttribute("timeout"), out c))
+            {
+                if (c > 0)
+                {
+                    flush_timer.Interval = c * 1000;
+                    flush_timer.Stop();
+                    flush_timer.Start();
+                }
+            }
+            
+
+
+            for (int i = 0; i < root.ChildNodes.Count; i++)
+            {
+                XmlElement row = (XmlElement)root.ChildNodes[i];
+
+                if (row.Name == "img")
+                {
+                    Ipaybox.AddImage(row, ref img[img_count], this);
+                    img_count++;
+                }
+                if (row.Name == "button")
+                {
+                    AddButton(row);
+                }
+                if (row.Name == "label")
+                {
+                    AddLabel(row, ref labels[labels_count], this);
+                    labels_count++;
+                }
+            }
+        }
+        public void AddLabel(XmlElement el, ref Label label, System.Windows.Forms.Form f)
+        {
+            if (label == null)
+                label = new Label();
+            string location = el.GetAttribute("location");
+            string text = el.GetAttribute("text");
+            string size = el.GetAttribute("size");
+            string font = el.GetAttribute("font");
+            string font_size = el.GetAttribute("font-size");
+            string color = el.GetAttribute("color");
+            string textalign = el.GetAttribute("textalign");
+            string style = el.GetAttribute("style");
+            string name = el.GetAttribute("name");
+            string BackColor = el.GetAttribute("backcolor");
+
+            int X = int.Parse(location.Split(';')[0]);
+            int Y = int.Parse(location.Split(';')[1]);
+
+            //label = new Label();
+            //labels[label_count].Parent = img[1];
+            if (text.Length != 0)
+                label.Text = text;
+
+            label.BackColor = Color.Transparent;
+            label.Location = new Point(X, Y);
+
+            if (size.Length != 0)
+                label.Size = new Size(int.Parse(size.Split(';')[0]), int.Parse(size.Split(';')[1]));
+            else
+                label.AutoSize = true;
+            // Цвет
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+
+            if (color.Length > 5)
+            {
+                red = int.Parse(color.Split(';')[0]);
+                green = int.Parse(color.Split(';')[1]);
+                blue = int.Parse(color.Split(';')[2]);
+
+                label.ForeColor = Color.FromArgb(red, green, blue);
+            }
+
+            if (BackColor.Length > 5)
+            {
+                red = int.Parse(BackColor.Split(';')[0]);
+                green = int.Parse(BackColor.Split(';')[1]);
+                blue = int.Parse(BackColor.Split(';')[2]);
+
+                label.BackColor = Color.FromArgb(red, green, blue);
+            }
+
+            if (font.Length != 0 && font_size.Length != 0)
+            {
+                switch (style)
+                {
+                    case "bold": label.Font = new Font(font, float.Parse(font_size), FontStyle.Bold); break;
+                    case "italic": label.Font = new Font(font, float.Parse(font_size), FontStyle.Italic); break;
+                    case "strikeout": label.Font = new Font(font, float.Parse(font_size), FontStyle.Strikeout); break;
+                    case "underline": label.Font = new Font(font, float.Parse(font_size), FontStyle.Underline); break;
+                    default:
+                        label.Font = new Font(font, float.Parse(font_size), FontStyle.Regular);
+                        break;
+                }
+
+
+
+            }
+
+            if (textalign.Length != 0)
+            {
+                switch (textalign.ToLower())
+                {
+                    case "middleright": label.TextAlign = ContentAlignment.MiddleRight; break;
+                    case "middleleft": label.TextAlign = ContentAlignment.MiddleLeft; break;
+                    case "middlecenter": label.TextAlign = ContentAlignment.MiddleCenter; break;
+                    case "topleft": label.TextAlign = ContentAlignment.TopLeft; break;
+                    case "topright": label.TextAlign = ContentAlignment.TopRight; break;
+                    default:
+                        label.TextAlign = ContentAlignment.TopLeft; break;
+                }
+
+            }
+
+            switch (name)
+            { 
+                case "amount":
+                    label.Text = amount;
+                    break;
+                case "to_amount":
+                    label.Text = to_amount;
+                    break;
+                case "account":
+                    label.Text = account;
+                    break;
+                case "comission":
+                    label.Text = comission;
+                    break;
+            }
+            f.Controls.Add(label);
+
+        }/*
+        public void AddLabel(string ltext, Point lpoint, string font, string size)
+        {
+            labels[labels_count] = new Label();
+            //labels[label_count].Parent = img[1];
+            labels[labels_count].Text = ltext;
+            labels[labels_count].BackColor = Color.White;
+            labels[labels_count].Location = lpoint;
+
+
+            labels[labels_count].AutoSize = true;
+            // Цвет
+            //int red = 0;
+            //int green = 0;
+            //int blue = 0;
+
+            //if (color.Length > 5)
+            //{
+            //    red = int.Parse(color.Split(';')[0]);
+            //    green = int.Parse(color.Split(';')[1]);
+            //    blue = int.Parse(color.Split(';')[2]);
+
+            //    label.ForeColor = Color.FromArgb(red, green, blue);
+            //}
+
+
+            if (font.Length != 0 && size.Length != 0)
+            {
+                labels[labels_count].Font = new Font(font, float.Parse(size));
+            }
+
+            this.Controls.Add(labels[labels_count]);
+            labels_count++;
+        }*/
+        private void AddButton(XmlElement el)
+        {
+
+            string location = el.GetAttribute("location");
+            string limg = el.GetAttribute("img");
+
+
+            int X = int.Parse(location.Split(';')[0]);
+            int Y = int.Parse(location.Split(';')[1]);
+
+            Bitmap bmp = new Bitmap(Ipaybox.StartupPath + @"\" + limg);
+            img[img_count] = new PictureBox();
+            img[img_count].Location = new Point(X, Y);
+            img[img_count].Image = bmp;
+            img[img_count].Size = bmp.Size;
+            img[img_count].Tag = el.GetAttribute("value").ToLower();
+            img[img_count].Click += new System.EventHandler(this.Pic_Click);
+ 
+            this.Controls.Add(img[img_count]);
+
+            img_count++;
+        }
+        private void Pic_Click(object sender, System.EventArgs e)
+        {
+            Sound.Play(Ipaybox.StartupPath.TrimEnd('\\') + "\\sounds\\" + "click1.wav");
+            PictureBox pb = (PictureBox)sender;
+            //MessageBox.Show("CLICK PRV=" + pb.Tag);
+            string tag = pb.Tag.ToString().ToLower();
+
+            // Нажата не кнопка на клаве
+            switch (tag)
+            {
+                case "ok":
+                   ExitForm();
+                    break;
+                case "cancel":
+                    ExitForm();
+                    break;
+                case "goprev":
+                  ExitForm();
+                    break;
+            }
+        }
+        private void ExitForm()
+        {
+            Ipaybox.AddToLog(Ipaybox.Logs.Main, "Выход формы `Спасибо`.");
+            Ipaybox.FlushToMain();
+            Ipaybox.StartForm.Main_Process();
+            this.Dispose();
+        }
+
+        private void flush_timer_Tick(object sender, EventArgs e)
+        {
+            ExitForm();
+        }
+    }
+}

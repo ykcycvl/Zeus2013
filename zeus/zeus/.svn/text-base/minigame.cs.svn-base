@@ -1,0 +1,652 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Printing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+using System.Xml;
+using Acceptors;
+using System.Runtime.InteropServices;
+using Microsoft.Win32;
+
+namespace zeus
+{
+    /*class MiniGame
+    {
+        Point _location;
+        static Byte _threadCount = 0;
+        PictureBox _slotGameBG;
+        PictureBox startButton;
+        List<PictureBox> InfoImages = new List<PictureBox>();
+        List<Control> controls = new List<Control>();
+        private static bool Rolling = false;
+        private static bool Rolled = false;
+
+        public bool isRolling()
+        {
+            return Rolling;
+        }
+
+        public bool isRolled()
+        {
+            return Rolled;
+        }
+
+        private class Wins
+        {
+            public int probability;
+            public string[] stopValues;
+            public int discount;
+            public PictureBox pb = new PictureBox();
+        }
+
+        private class Element
+        {
+            private Image _img;
+            public string eValue;
+            public Size size;
+
+            public Image img
+            {
+                get { return _img; }
+            }
+
+            public Element(Image img, string val)
+            {
+                _img = img;
+                eValue = val;
+                size = img.Size;
+            }
+        }
+
+        List<Element> elements = new List<Element>();
+        List<Wins> winList = new List<Wins>();
+        Slot[] slots = new Slot[3];
+
+        class Slot : PictureBox
+        {
+            int _cycles;
+            int _speed;
+            string _stopValue;
+            int dy;
+            Image img;
+
+            List<Element> _elements;
+
+            public Slot(List<Element> elArray, int cycles, int speed, string stopValue, Image bgImage, Point location)
+            {
+                _elements = elArray;
+                _cycles = cycles;
+                _speed = speed;
+                _stopValue = stopValue;
+                this.Paint += new System.Windows.Forms.PaintEventHandler(slotContainer_Paint);
+                this.BackgroundImage = bgImage;
+                this.Location = location;
+                this.Size = bgImage.Size;
+            }
+
+            private void slotContainer_Paint(object sender, PaintEventArgs e)
+            {
+                if (img != null)
+                    e.Graphics.DrawImageUnscaled(img, 0, dy);
+            }
+
+            public void Roll()
+            {
+                System.Threading.Thread t = new System.Threading.Thread(roll);
+                t.Start();
+            }
+
+            private void roll()
+            {
+                _threadCount++;
+                Rolling = true;
+                _speed = 3;
+                dy = -40;
+
+                bool stopRolling = false;
+
+                for (int i = 1; i <= _cycles; i++)
+                    for (int j = 0; j < _elements.Count; j++)
+                    {
+                        dy = -_elements[j].size.Height;
+                        img = _elements[j].img;
+
+                        while (dy <= this.Height + 10)
+                        {
+                            dy += _speed;
+                            System.Threading.Thread.Sleep(1);
+                            this.Invalidate();
+
+                            if (i == _cycles)
+                                if (_elements[j].eValue == _stopValue)
+                                {
+                                    _speed = 3;
+
+                                    int stopLine = (this.Height - _elements[j].size.Height) / 2;
+
+                                    if (dy >= stopLine)
+                                    {
+                                        stopRolling = true;
+                                        break;
+                                    }
+                                }
+                        }
+
+                        if (stopRolling)
+                            break;
+                    }
+
+                _threadCount--;
+
+                if (_threadCount == 0)
+                {
+                    Rolling = false;
+                    Rolled = true;
+                }
+            }
+        }
+
+        public MiniGame(XmlElement el, Form frm)
+        {
+            if (el != null)
+            {
+                _location = new Point(Convert.ToInt32(el.GetAttribute("location").Split(';')[0]), Convert.ToInt32(el.GetAttribute("location").Split(';')[1]));
+                _slotGameBG = new PictureBox();
+                _slotGameBG.BackgroundImage = Bitmap.FromFile(Ipaybox.StartupPath + @"\" + el.GetAttribute("backgroundimage"));
+                _slotGameBG.Size = _slotGameBG.BackgroundImage.Size;
+                _slotGameBG.Location = _location;
+                Image bgSlotImage;
+
+                for (int i = 0; i < el.ChildNodes.Count; i++)
+                {
+                    XmlElement row = (XmlElement)el.ChildNodes[i];
+
+                    if (row.Name == "slot_form")
+                    {
+                        bgSlotImage = Bitmap.FromFile(Ipaybox.StartupPath + @"\" + row.GetAttribute("backgroundimage"));
+                        Point location = new Point(Convert.ToInt32(row.GetAttribute("location").Split(';')[0]), Convert.ToInt32(row.GetAttribute("location").Split(';')[1]));
+
+                        for (int j = 0; j < row.ChildNodes.Count; j++)
+                        {
+                            XmlElement item = (XmlElement)row.ChildNodes[j];
+
+                            if (item.Name == "item")
+                            {
+                                Element slotElement = new Element(Bitmap.FromFile(item.GetAttribute("img")), item.GetAttribute("value"));
+                                elements.Add(slotElement);
+                            }
+
+                            if (item.Name == "button")
+                            {
+                                startButton = new PictureBox();
+                                startButton.Image = Bitmap.FromFile(Ipaybox.StartupPath + @"\" + item.GetAttribute("img"));
+                                startButton.Location = new Point(Convert.ToInt32(item.GetAttribute("location").Split(';')[0]), Convert.ToInt32(item.GetAttribute("location").Split(';')[1]));
+                                startButton.Size = startButton.Image.Size;
+                                startButton.Click += new System.EventHandler(StartButton_Click);
+                                controls.Add(startButton);
+                            }
+
+                            if (item.Name == "img")
+                            {
+                                PictureBox pb = new PictureBox();
+                                pb.Image = Bitmap.FromFile(Ipaybox.StartupPath + @"\" + item.GetAttribute("img"));
+                                pb.Size = pb.Image.Size;
+                                pb.Location = new Point(Convert.ToInt32(item.GetAttribute("location").Split(';')[0]), Convert.ToInt32(item.GetAttribute("location").Split(';')[1]));
+                                controls.Add(pb);
+                            }
+
+                            if (item.Name == "win")
+                            {
+                                Wins wins = new Wins();
+                                wins.discount = Convert.ToInt32(item.GetAttribute("discount"));
+                                wins.stopValues = item.GetAttribute("stopValues").Split(';');
+                                wins.probability = Convert.ToInt32(item.GetAttribute("probability"));
+                                wins.pb.Image = Bitmap.FromFile(Ipaybox.StartupPath + @"\" + item.GetAttribute("img"));
+                                wins.pb.Size = wins.pb.Image.Size;
+                                wins.pb.Location = new Point(Convert.ToInt32(item.GetAttribute("location").Split(';')[0]), Convert.ToInt32(item.GetAttribute("location").Split(';')[1]));
+                            }
+                        }
+
+                        for (int j = 0; j < slots.Length; j++)
+                        {
+                            slots[j] = new Slot(elements, 20, 20, "3", bgSlotImage, new Point(location.X + (j * (bgSlotImage.Width + 6)), location.Y));
+                            controls.Add(slots[j]);
+                        }
+                    }
+                }
+
+                controls.Add(_slotGameBG);
+
+                for (int i = 0; i < controls.Count; i++)
+                {
+                    frm.Controls.Add(controls[i]);
+                }
+            }
+        }
+
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < slots.Length; i++)
+            {
+                slots[i].Roll();
+            }
+
+            MessageBox.Show(_threadCount.ToString());
+        }
+    }*/
+
+    
+    class SlotGame : Panel
+    {
+        public delegate void RollingEventHandler();
+        public event RollingEventHandler RollingComplete;
+        public event RollingEventHandler RollingStarted;
+
+        protected void StartRolling()
+        {
+            Rolling = true;
+            Rolled = false;
+
+            if (RollingStarted != null)
+                RollingStarted();
+        }
+        private void StopRolling()
+        {
+            Rolling = false;
+            Rolled = true;
+            this.Invoke((MethodInvoker)delegate() { this.ResultLabel.Visible = true; });
+
+            if (RollingComplete != null)
+            {
+                RollingComplete();
+            }
+        }
+
+        PictureBox pb;
+        PictureBox startButton = new PictureBox();
+        List<Image> imageList = new List<Image>();
+        public bool Rolling;
+        public bool Rolled;
+        static byte ThreadCount;
+        WClist _wclist = new WClist();
+        string[] pars = new string[3];
+        public int discount = 0;
+        private Point ResLoc;
+        private Size ResSize;
+        public Label ResultLabel = new Label();
+
+        private class Element : PictureBox
+        {
+            private string _value;
+
+            public string Value
+            {
+                get { return _value; }
+            }
+
+            public Element(Image img, string val)
+            {
+                this.Image = img;
+                this.Size = img.Size;
+                this.BackColor = System.Drawing.Color.Transparent;
+                _value = val;
+            }
+        }
+
+        class Slot : Panel
+        {
+            public event RollingEventHandler SlotRollingComplete;
+
+            protected void RollingComplete()
+            {
+                if (SlotRollingComplete != null)
+                    SlotRollingComplete();
+            }
+
+            public List<Element> elements = new List<Element>();
+            public int StartElement = 0;
+            public string StopValue = "";
+            int RollCount = 1;
+
+            private void _roll()
+            {
+                ThreadCount++;
+                int j = StartElement;
+                int speed = 35;
+                bool stop = false;
+
+                if (StopValue == string.Empty)
+                {
+                    Random r = new Random();
+                    StopValue = elements[r.Next(elements.Count - 1)].Value;
+                }
+
+                for (int i = 0; i <= RollCount; i++)
+                {
+                    while (j < elements.Count)
+                    {
+                        this.Invoke((MethodInvoker)delegate() { this.Controls.Add(elements[j]); });
+
+                        int k = -elements[j].Size.Height - 20;
+                        int stopLine = (this.Height - elements[j].Height) / 2;
+
+                        while (k < this.Height)
+                        {
+                            elements[j].Invoke((MethodInvoker)delegate() { elements[j].Location = new Point(10, k); });
+                            k += speed;
+
+                            if (elements[j].Value == StopValue && i == RollCount)
+                            {
+                                speed = 20;
+
+                                if (k >= stopLine)
+                                {
+                                    stop = true;
+                                    break;
+                                }
+                            }
+
+                            System.Threading.Thread.Sleep(15);
+                        }
+
+                        if (stop)
+                            break;
+
+                        this.Invoke((MethodInvoker)delegate() { this.Controls.Remove(elements[j]); });
+                        j++;
+                    }
+
+                    j = 0;
+                }
+
+                ThreadCount--;
+
+                if (ThreadCount == 0)
+                {
+                    this.RollingComplete();
+                }
+            }
+
+            public void Roll(int rollCount)
+            {
+                RollCount = rollCount;
+                System.Threading.Thread t = new System.Threading.Thread(_roll);
+                t.Start();
+            }
+
+            public void SetStartElement()
+            {
+                /*this.Controls.Add(elements[StartElement]);
+                elements[StartElement].Location = new Point(10, (this.Size.Height - elements[StartElement].Height) / 2);*/
+            }
+        }
+
+        Slot[] slots = new Slot[3];
+
+        public SlotGame(XmlElement el, Control parentControl)
+        {
+            _wclist.Load();
+
+            string s = _wclist.ProviderList.Find(p => p == Ipaybox.PRV_SELECTED_ID);
+
+            if (_wclist.Count == 0 || String.IsNullOrEmpty(s) || _wclist.ProviderList.Count == 0)
+                Ipaybox.ShowGame = false;
+
+            ResultLabel.AutoSize = false;
+            ResultLabel.TextAlign = ContentAlignment.MiddleCenter;
+            ThreadCount = 0;
+            Rolling = false;
+            Rolled = false;
+            this.Location = new Point(Convert.ToInt32(el.GetAttribute("location").Split(';')[0]), Convert.ToInt32(el.GetAttribute("location").Split(';')[1]));
+            this.BackgroundImage = Image.FromFile(Ipaybox.StartupPath + @"\" + el.GetAttribute("backgroundimage"));
+            this.Size = this.BackgroundImage.Size;
+            startButton.Visible = false;
+
+            XmlElement slotFormXml = (XmlElement)el.SelectSingleNode("slot_form");
+            Point slotsLocation = new Point(Convert.ToInt32(slotFormXml.GetAttribute("location").Split(';')[0]), Convert.ToInt32(slotFormXml.GetAttribute("location").Split(';')[1]));
+
+            for (int i = 0; i < slotFormXml.ChildNodes.Count; i++)
+            {
+                XmlElement item = (XmlElement)slotFormXml.ChildNodes[i];
+
+                if (item.Name == "button")
+                {
+                    startButton.Image = Image.FromFile(Ipaybox.StartupPath + @"\" + item.GetAttribute("img"));
+                    startButton.Size = startButton.Image.Size;
+                    startButton.Location = new Point(Convert.ToInt32(item.GetAttribute("location").Split(';')[0]), Convert.ToInt32(item.GetAttribute("location").Split(';')[1]));
+                    startButton.Click += new EventHandler(startButton_Click);
+                    this.Controls.Add(startButton);
+                }
+
+                if (item.Name == "img")
+                {
+                    pb = new PictureBox();
+                    pb.Image = Image.FromFile(Ipaybox.StartupPath + @"\" + item.GetAttribute("img"));
+                    pb.Size = pb.Image.Size;
+                    pb.Location = new Point(Convert.ToInt32(item.GetAttribute("location").Split(';')[0]), Convert.ToInt32(item.GetAttribute("location").Split(';')[1]));
+                    this.Controls.Add(pb);
+                }
+
+                if (item.Name == "notwinlabel")
+                {
+                    string bgcolor = item.GetAttribute("backcolor");
+                    int r = int.Parse(bgcolor.Split(';')[0]), g = int.Parse(bgcolor.Split(';')[0]), b = int.Parse(bgcolor.Split(';')[0]);
+                    ResultLabel.BackColor = System.Drawing.Color.FromArgb(r, g, b);
+                    ResultLabel.ForeColor = System.Drawing.Color.FromArgb(89, 89, 89);
+                    Font font = new Font("Verdana", 14, FontStyle.Regular);
+                    string loc = item.GetAttribute("location");
+                    int X = int.Parse(loc.Split(';')[0]);
+                    int Y = int.Parse(loc.Split(';')[1]);
+                    ResultLabel.Location = new Point(X, Y);
+
+                    string sz = item.GetAttribute("size");
+                    X = int.Parse(sz.Split(';')[0]);
+                    Y = int.Parse(sz.Split(';')[1]);
+                    ResultLabel.Size = new Size(X, Y);
+                    ResultLabel.Font = font;
+                    ResultLabel.Text = "Вы выйграли скидку 0%";
+                    ResultLabel.Visible = false;
+                }
+
+                if (item.Name == "winlabel")
+                {
+                    string bgcolor = item.GetAttribute("backcolor");
+                    int r = int.Parse(bgcolor.Split(';')[0]), g = int.Parse(bgcolor.Split(';')[0]), b = int.Parse(bgcolor.Split(';')[0]);
+                    ResultLabel.BackColor = System.Drawing.Color.FromArgb(r, g, b);
+                    ResultLabel.ForeColor = System.Drawing.Color.FromArgb(89, 89, 89);
+
+                    string loc = item.GetAttribute("location");
+                    int X = int.Parse(loc.Split(';')[0]);
+                    int Y = int.Parse(loc.Split(';')[1]);
+                    ResLoc = new Point(X, Y);
+
+                    string sz = item.GetAttribute("size");
+                    X = int.Parse(sz.Split(';')[0]);
+                    Y = int.Parse(sz.Split(';')[1]);
+                    ResSize = new Size(X, Y);
+                    ResultLabel.Visible = false;
+                }
+            }
+
+            for (int i = 0; i < slots.Length; i++)
+            {
+                slots[i] = new Slot();
+                slots[i].BackgroundImage = Bitmap.FromFile(Ipaybox.StartupPath + @"\" + slotFormXml.GetAttribute("backgroundimage"));
+                slots[i].Size = slots[i].BackgroundImage.Size;
+                slots[i].Location = new Point(slotsLocation.X + (i * (slots[i].Size.Width + 5)), slotsLocation.Y);
+
+                for (int j = 0; j < slotFormXml.ChildNodes.Count; j++)
+                {
+                    XmlElement item = (XmlElement)slotFormXml.ChildNodes[j];
+
+                    if (item.Name == "item")
+                        slots[i].elements.Add(new Element(Image.FromFile(Ipaybox.StartupPath + @"\" + item.GetAttribute("img")), item.GetAttribute("value")));
+                }
+
+                Random r = new Random();
+                slots[i].StartElement = r.Next(slots[i].elements.Count - 1);
+                this.Controls.Add(slots[i]);
+                slots[i].SetStartElement();
+                slots[i].SlotRollingComplete += new RollingEventHandler(OnRollingComplete);
+            }
+
+            this.Controls.Add(ResultLabel);
+            this.Visible = false;
+            parentControl.Controls.Add(this);
+        }
+
+        private void OnRollingComplete()
+        {
+            StopRolling();
+        }
+
+        public void startButton_Click(object sender, EventArgs e)
+        {
+            Ipaybox.RollStarts++;
+            Ipaybox.AddToLog(Ipaybox.Logs.Main, "Нажата кнопка старта мини-игры");
+
+            try
+            {
+                Ipaybox.Bill.SendCommand(Commands.StopTake);
+                Ipaybox.AddToLog(Ipaybox.Logs.Main, "Остановка приема денег");
+            }
+            catch { }
+
+            this.StartRolling();
+
+            Random r = new Random();
+            int p = 0, q = 0;
+
+            p = Convert.ToInt32(_wclist[r.Next(_wclist.Count - 1)].nvaules.Split(';')[0]);
+            pars[0] = p.ToString();
+            q = p;
+
+            while (p == q)
+                p = Convert.ToInt32(_wclist[r.Next(_wclist.Count - 1)].nvaules.Split(';')[0]);
+
+            pars[1] = p.ToString();
+            q = p;
+
+            while (p == q)
+                p = Convert.ToInt32(_wclist[r.Next(_wclist.Count - 1)].nvaules.Split(';')[0]);
+
+            pars[2] = p.ToString();
+
+            for (int i = _wclist.Count - 1; i >= 0; i--)
+            {
+                if (Ipaybox.RollStarts >= _wclist[i].probability && Ipaybox.RollStarts % _wclist[i].probability == 0)
+                {
+                    pars[0] = _wclist[i].nvaules.Split(';')[0];
+                    pars[1] = _wclist[i].nvaules.Split(';')[1];
+                    pars[2] = _wclist[i].nvaules.Split(';')[2];
+                    ResultLabel.Location = ResLoc;
+                    ResultLabel.Size = ResSize;
+                    ResultLabel.Text = "Вы выйграли скидку " + _wclist[i].discountprc.ToString() + "%";
+                    discount = _wclist[i].discountprc;
+                    break;
+                }
+            }
+
+            startButton.Visible = false;
+
+            for (int i = 0; i < slots.Length; i++)
+            {
+                slots[i].StopValue = pars[i];
+                slots[i].Roll(i + 1);
+            }
+        }
+
+        public void ShowStartButton()
+        {
+            this.Visible = true;
+            startButton.Visible = true;
+        }
+    }
+
+    //Выйгрышные комбинации
+    public class WinsClass
+    {
+        public int probability;
+        public string nvaules;
+        public int discountprc;
+        public string Message;
+    }
+
+    public class WClist : List<WinsClass>
+    {
+        public XmlDocument XmlDoc = new XmlDocument();
+        private string filename = zeus.Ipaybox.StartupPath + @"\config\slotgame.xml";
+
+        public List<string> ProviderList = new List<string>();
+
+        public void Load()
+        {
+            if (File.Exists(filename))
+            {
+                XmlDoc.Load(filename);
+
+                if (XmlDoc.DocumentElement.ChildNodes.Count > 0)
+                    if (XmlDoc.DocumentElement.ChildNodes[0].Name == "minigame")
+                    {
+                        XmlElement root = (XmlElement)XmlDoc.DocumentElement;
+                        XmlElement minigameXml = null;
+
+                        for (int i = 0; i < root.ChildNodes.Count; i++)
+                        {
+                            XmlElement el = (XmlElement)root.ChildNodes[i];
+
+                            if (el.Name == "minigame")
+                            {
+                                minigameXml = el;
+                                break;
+                            }
+                        }
+
+                        if (minigameXml != null)
+                        {
+                            for (int i = 0; i < minigameXml.ChildNodes.Count; i++)
+                            {
+                                XmlElement row = (XmlElement)minigameXml.ChildNodes[i];
+
+                                if (row.Name == "win")
+                                {
+                                    string discount = row.GetAttribute("discount");
+                                    string probability = row.GetAttribute("probability");
+                                    string stopValues = row.GetAttribute("stopValues");
+                                    WinsClass wc = new WinsClass();
+                                    wc.discountprc = Convert.ToInt32(discount);
+                                    wc.probability = Convert.ToInt32(probability);
+                                    wc.nvaules = stopValues;
+                                    this.Add(wc);
+                                }
+
+                                if (row.Name == "providerlist")
+                                {
+                                    for (int j = 0; j < row.ChildNodes.Count; j++)
+                                    {
+                                        XmlElement prv = (XmlElement)row.ChildNodes[j];
+                                        this.ProviderList.Add(prv.GetAttribute("id"));
+                                    }
+                                }
+                            }
+                        }
+                    }
+            }
+            else
+            {
+                Ipaybox.ShowGame = false;
+            }
+        }
+
+        public void Save()
+        {
+            XmlDoc.Save(filename);
+        }
+    }
+
+}

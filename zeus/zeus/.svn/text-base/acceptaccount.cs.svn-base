@@ -1,0 +1,803 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Xml;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+
+namespace zeus
+{
+    public partial class acceptaccount : Form
+    {
+        private Bitmap _backBuffer;
+        bool AccauntValidated;
+        bool IsAccountValid ;
+        bool IsServiceAvailable;
+        PictureBox[] img = new PictureBox[10];
+        PictureBox prov = new PictureBox();
+        int img_count;
+        Label[] labels = new Label[10];
+        int labels_count;
+        int glResult;
+        public static List<AxShockwaveFlashObjects.AxShockwaveFlash> lFlash;
+
+        int indexDalee;
+
+        public acceptaccount()
+        {
+            InitializeComponent();
+            KeyDown += new KeyEventHandler(acceptaccount_KeyDown);
+        }
+
+        void acceptaccount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Modifiers == Keys.Alt && e.KeyCode == Keys.F4)
+            {
+                Ipaybox.StartForm.Dispose();
+            }
+        }
+        protected override void OnPaintBackground(PaintEventArgs pevent)
+        {
+            _backBuffer = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
+
+            Graphics g = Graphics.FromImage(_backBuffer);
+
+            if (this.BackgroundImage != null)
+            {
+                g.DrawImageUnscaled(this.BackgroundImage, 0, 0);
+            }
+         
+            for (int i = 0; i < img_count; i++)
+            {
+                if (img[i].Visible)
+                {
+                    try
+                    {
+                        //PictureBox pb = (PictureBox)this.img[i];
+                        Rectangle dest = new Rectangle(this.img[i].Left, this.img[i].Top, this.img[i].Width, this.img[i].Height);
+
+                        g.DrawImage(this.img[i].Image, dest);
+                    }
+                    catch
+                    { }
+                }
+            }
+
+            g.Dispose();
+            //Copy the back buffer to the screen
+            pevent.Graphics.DrawImageUnscaled(_backBuffer, 0, 0);
+        }
+        public static void AddImage(XmlElement el, ref PictureBox img)
+        {
+            string location = el.GetAttribute("location");
+            string limg = el.GetAttribute("img");
+            string size = el.GetAttribute("size");
+
+            int X = int.Parse(location.Split(';')[0]);
+            int Y = int.Parse(location.Split(';')[1]);
+
+            Bitmap bmp = new Bitmap(Ipaybox.StartupPath + @"\" + limg);
+            img = new PictureBox();
+            img.Location = new Point(X, Y);
+            img.Image = bmp;
+
+            if (size != "")
+            {
+                X = int.Parse(size.Split(';')[0]);
+                Y = int.Parse(size.Split(';')[1]);
+                img.SizeMode = PictureBoxSizeMode.StretchImage;
+                img.Size = new Size(X, Y);
+
+            }
+            else
+            {
+                img.Size = bmp.Size;
+            }
+
+            //f.Controls.Add(img);
+
+
+        }
+
+        void acceptaccount_Click(object sender, System.EventArgs e)
+        {
+            MouseEventArgs p = (MouseEventArgs)e;
+
+            for (int i = 0; i < img_count; i++)
+            {
+                if (img[i].Tag != null && !string.IsNullOrEmpty(img[i].Tag.ToString()) && (p.X >= img[i].Left && p.X <= img[i].Left + img[i].Width
+                    && p.Y >= img[i].Top && p.Y <= img[i].Top + img[i].Height))
+                {
+                    if (img[i].Visible)
+                    {
+                        Pic_Click(img[i], new EventArgs());
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void LoadThisForm()
+        {
+            try
+            {
+                bool form_prc = false;
+                XmlElement default_form = null;
+                XmlElement el = (XmlElement)Ipaybox.XML_Interface.SelectSingleNode("custom_forms");
+
+                for (int i = 0; i < el.ChildNodes.Count; i++)
+                {
+                    XmlElement row = (XmlElement)el.ChildNodes[i];
+                    
+                    if (row.Name == "provider" && row.GetAttribute("id") == Ipaybox.PRV_SELECTED_ID)
+                    {
+                        for (int j = 0; j < row.ChildNodes.Count; j++)
+                        {
+                            XmlElement row1 = (XmlElement)row.ChildNodes[j];
+                            if (row1.Name == "form" && row1.GetAttribute("name").ToLower() == "acceptaccount")
+                            {
+                                default_form = row1;
+                                Process_Form(default_form);
+                                form_prc = true;
+                                return;
+                            }
+                        }
+                    }
+
+                    if (row.Name == "provider" && row.GetAttribute("id") == "default")
+                    {
+                        for (int j = 0; j < row.ChildNodes.Count; j++)
+                        {
+                            XmlElement row1 = (XmlElement)row.ChildNodes[j];
+                            if (row1.Name == "form" && row1.GetAttribute("name").ToLower() == "acceptaccount" )
+                            {
+                                default_form = row1;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (!form_prc && default_form != null)
+                {
+                    Process_Form(default_form);
+                }
+                else
+                {
+                    ExitForm();
+                }
+            }
+            catch
+            {
+                Ipaybox.NeedToUpdateConfiguration = true;
+                Ipaybox.NeedUpdates.Config = true;
+                Ipaybox.Working = false;
+            }
+        }
+        public static bool withProviderName = false;
+        public static void AddLabel(XmlElement el, ref Label label, System.Windows.Forms.Form f)
+        {
+            string location = el.GetAttribute("location");
+            string text = el.GetAttribute("text");
+            string size = el.GetAttribute("size");
+            string font = el.GetAttribute("font");
+            string font_size = el.GetAttribute("font-size");
+            string color = el.GetAttribute("font-color");
+            string textalign = el.GetAttribute("textalign");
+            string style = el.GetAttribute("style");
+
+            bool c = false;
+            
+            bool.TryParse(el.GetAttribute("with-provider-name"), out c);
+
+            withProviderName = c;
+
+
+            int X = int.Parse(location.Split(';')[0]);
+            int Y = int.Parse(location.Split(';')[1]);
+
+            //label = new Label();
+            //labels[label_count].Parent = img[1];
+            if (text.Length != 0)
+                label.Text = text;
+
+            label.BackColor = Color.Transparent;
+            label.Location = new Point(X, Y);
+
+            if (size.Length != 0)
+                label.Size = new Size(int.Parse(size.Split(';')[0]), int.Parse(size.Split(';')[1]));
+            else
+                label.AutoSize = true;
+            // Цвет
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+
+            if (color.Length > 5)
+            {
+                red = int.Parse(color.Split(';')[0]);
+                green = int.Parse(color.Split(';')[1]);
+                blue = int.Parse(color.Split(';')[2]);
+            }
+
+            label.ForeColor = Color.FromArgb(red, green, blue);
+
+            if (font.Length != 0 && font_size.Length != 0)
+            {
+                switch (style)
+                {
+                    case "bold": label.Font = new Font(font, float.Parse(font_size), FontStyle.Bold); break;
+                    case "italic": label.Font = new Font(font, float.Parse(font_size), FontStyle.Italic); break;
+                    case "strikeout": label.Font = new Font(font, float.Parse(font_size), FontStyle.Strikeout); break;
+                    case "underline": label.Font = new Font(font, float.Parse(font_size), FontStyle.Underline); break;
+                    default:
+                        label.Font = new Font(font, float.Parse(font_size), FontStyle.Regular);
+                        break;
+                }
+            }
+
+            if (textalign.Length != 0)
+            {
+                switch (textalign.ToLower())
+                {
+                    case "middleright": label.TextAlign = ContentAlignment.MiddleRight; break;
+                    case "middleleft": label.TextAlign = ContentAlignment.MiddleLeft; break;
+                    case "middlecenter": label.TextAlign = ContentAlignment.MiddleCenter; break;
+                    case "topleft": label.TextAlign = ContentAlignment.TopLeft; break;
+                    case "topright": label.TextAlign = ContentAlignment.TopRight; break;
+                    case "topcenter": label.TextAlign = ContentAlignment.TopCenter; break;
+                    default:
+                        label.TextAlign = ContentAlignment.TopLeft; break;
+                }
+            }
+            //f.Controls.Add(label);
+        }
+        private void acceptaccount_Load(object sender, EventArgs e)
+        {
+            lFlash = new List<AxShockwaveFlashObjects.AxShockwaveFlash>();
+            AccauntValidated = false;
+            IsAccountValid = false;
+            IsServiceAvailable = false;
+            this.Size = Ipaybox.Resolution;
+
+            if (Ipaybox.Inches == 17)
+                this.Location = new Point(0, 0);
+           
+            label1.ForeColor = Color.FromArgb(169, 22, 6);
+            
+            try
+            {
+                _cursor.Hide();
+            }
+            catch { }
+
+            LoadThisForm();
+        }
+        /* private void Process_Form(XmlElement frm)
+         {
+
+             XmlElement root = frm;
+
+             string timeout = root.GetAttribute("timeout");
+             if (timeout == "")
+             {
+                 flush_timer.Interval = 30000;
+             }
+             else
+             {
+                 flush_timer.Interval = int.Parse(timeout) * 1000;
+             }
+
+             try
+             {
+                 this.BackgroundImage = new Bitmap(Ipaybox.StartupPath + @"\" + root.GetAttribute("backgroundimage"));
+
+             }
+             catch { ExitForm(); }
+
+
+             for (int i = 0; i < root.ChildNodes.Count; i++)
+             {
+                 XmlElement row = (XmlElement)root.ChildNodes[i];
+
+                 if (row.Name == "img")
+                 {
+                     Ipaybox.AddImage(row, ref img[img_count], this);
+                     img_count++;
+                 }
+                 if (row.Name == "button")
+                 {
+                     //AddButton(row);
+                     Ipaybox.AddButton(row, ref img[img_count], this, new EventHandler(this.Pic_Click));
+                     img_count++;
+                 }
+                 if (row.Name == "label")
+                 {
+                     Ipaybox.AddLabel(row, ref labels[label_count], this);
+                     label_count++;
+                 }
+                 if (row.Name == "param")
+                 {
+                     AddParam(row);
+                 }
+                 if (row.Name == "prvimg")
+                 {
+
+                     AddProviderImage(row);
+                 }
+             }
+
+         }*/
+        private void ValidateAccount()
+        {
+            AccauntValidated = false;
+            SendPays sp = new SendPays();
+
+            Random p = new Random();
+            int rnd = p.Next(1, 100);
+            string str = rnd.ToString();
+            if (str.Length < 3)
+            {
+                for (int i = 0; i < 3 - str.Length; i++)
+                {
+                    rnd = rnd * 10;
+                }
+            }
+
+            string account = GetAccountValue();
+
+            MD5 md5hasher = MD5.Create();
+            byte[] hash = md5hasher.ComputeHash(Encoding.Default.GetBytes(account));
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i]);
+            }
+
+            string sHash = sb.ToString();
+
+            while (sHash.Length < 5)
+            {
+                int r = p.Next(0, 9);
+                sHash += r.ToString();
+            }
+
+            //Ipaybox.curPay.txn_id = DateTime.Now.ToString("yyMMddHHmmss0") + rnd.ToString();
+            Ipaybox.curPay.txn_id = DateTime.Now.ToString("yyMMddHHmmss") + Ipaybox.PRV_SELECTED_ID.Trim() + sHash.Substring(0, 5);
+
+            while (Ipaybox.curPay.txn_id.Length > 19)
+                Ipaybox.curPay.txn_id = Ipaybox.curPay.txn_id.Substring(0, Ipaybox.curPay.txn_id.Length - 1);
+
+            Ipaybox.curPay.Date = DateTime.Now;
+            sp.SendPay("check", Ipaybox.PRV_SELECTED_ID, Ipaybox.Terminal.terminal_id, Ipaybox.Terminal.terminal_pass, GetAccountValue(), Ipaybox.curPay.txn_id, "10", "10", Ipaybox.curPay.Date.ToString("yyyy.MM.dd HH:mm:ss"));
+
+            XmlDocument doc = new XmlDocument();
+
+            try
+            {
+                doc.LoadXml(sp.XML_Response);
+
+                string result = doc.DocumentElement.SelectSingleNode("result").InnerText;
+                string comment = doc.DocumentElement.SelectSingleNode("comment").InnerText;
+
+                int.TryParse(result, out glResult);
+
+                if (result == "0")
+                {
+                    IsAccountValid = true;
+                    IsServiceAvailable = true;
+                }
+                else
+                {
+                    IsAccountValid = false;
+                    IsServiceAvailable = true;
+                }
+            }
+            catch
+            {
+                // Не получили ответа или ответ неверный
+                IsAccountValid = false;
+                IsServiceAvailable = false;
+            }
+            AccauntValidated = true;
+        }
+        private void Process_Form(XmlElement frm)
+        { 
+            if (!string.IsNullOrEmpty(frm.GetAttribute("sound")) && !Ipaybox.SoundPlaying)
+                Sound.Play(Ipaybox.StartupPath.TrimEnd('\\') + "\\sounds\\" + frm.GetAttribute("sound"));
+
+
+            /*try {
+                string prv_img = Ipaybox.GetImageFromInterface_Prv(Ipaybox.PRV_SELECTED_ID);
+                if (prv_img != null)
+                { 
+                    prov = new PictureBox();
+                    prov.Image = new Bitmap(Ipaybox.StartupPath + @"\" + prv_img);
+                    prov.Location = new Point(175,220);
+                    prov.Size = new Size(160,106);
+                    prov.SizeMode = PictureBoxSizeMode.StretchImage;
+                    //prov.Visible = true;
+                    //prov.BackColor = Color.Transparent;
+                    this.Controls.Add(prov);
+                }
+            }
+            catch
+            {}
+            */
+            if (IsSelectedProviderOnline())
+            {
+                ProgressAnimator a = new ProgressAnimator();
+                a.Show();
+                new System.Threading.Thread(ValidateAccount).Start();
+
+                int zz = 0;
+                while (zz < 5000000 || !AccauntValidated)
+                {
+                    Application.DoEvents();
+                    zz++;
+                }
+
+                a.Hide();
+                a.Dispose();
+            }
+            else
+            {
+                IsAccountValid = true;
+                IsServiceAvailable = true;
+            }
+
+           // XmlElement root = frm;
+
+            try
+            {
+                this.BackgroundImage = new Bitmap(Ipaybox.StartupPath + @"\" + frm.GetAttribute("backgroundimage"));
+            }
+            catch { this.BackColor = Color.FromArgb(230,230,230); }
+
+            for (int i = 0; i < frm.ChildNodes.Count; i++)
+            {
+                XmlElement row = (XmlElement)frm.ChildNodes[i];
+
+                if (row.Name == "img")
+                {
+                    AddImage(row, ref img[img_count]);
+                    img_count++;
+                }
+                if (row.Name == "button")
+                {
+                    AddButton(row);
+                }
+                if (row.Name == "label")
+                {
+                    if (row.GetAttribute("name") == "account")
+                        AddLabel(row, ref label1, this);
+                    else
+                    {
+                        Ipaybox.AddLabel(row, ref labels[labels_count], this);
+                        labels_count++;
+                    }
+                }
+                if (row.Name == "prvimg")
+                {
+                    AddProviderImage(row);
+                }
+                if (row.Name == "flash")
+                {
+                    AddFlash(row, this);
+                }
+                if (row.Name == "label" )
+                {
+                    
+
+                }
+            }
+            string accname = "";
+            string acctext = "";
+            string accvalue = "";
+            string[] opt = Ipaybox.curPay.Options.Split('|');
+             
+            for (int i = 0; i < opt.Length; i++)
+            {
+                if (opt[i] != "")
+                {
+                    string ViewText = string.Empty;
+
+                    if (Ipaybox.curPay.ViewText != null && Ipaybox.curPay.ViewText[i] != null && !string.IsNullOrEmpty(Ipaybox.curPay.ViewText[i].ViewText))
+                    {
+                        ViewText = Ipaybox.curPay.ViewText[i].ViewText;
+                    }
+
+                    string[] param = opt[i].Split('%');
+                    accname = param[0];
+                    acctext += param[0] + ": " + (string.IsNullOrEmpty(ViewText) ? param[2] : ViewText) + "\r\n";
+                    //AddLabel(param[0] + ": " + param[2], new Point(100, 200 + y), "Times New Roman", "18","255;255;255");
+                    if (param[1] == "account")
+                        accvalue = param[2];
+                }
+            }
+            //AddLabel(acctext, new Point(100, 200), "Times New Roman", "18", "255;255;255", "");
+
+            label1.Text = acctext;
+            
+            if (withProviderName)
+            {
+                label1.TextAlign = ContentAlignment.MiddleCenter;
+                label1.Text = "Получатель: " + Ipaybox.PROVIDER_XML.GetAttribute("name") + "\r\n" + label1.Text;
+            }
+
+            if (!IsServiceAvailable)
+            {
+                ShowWarning(188, 500);
+                AddLabel("Отсутствует связь.\r\nНевозможно провести платеж на этого провайдера.", new Point(350, 530), "Times New Roman", "20", "169;22;6");
+            }
+            else
+                if (!IsAccountValid)
+                {
+                    ShowWarning(188, 500);
+                    AddLabel(acctext + "\r\nне прошел проверку или сервис провайдера не работает.", new Point(350, 530), "Times New Roman", "20", "169;22;6");
+                }
+                else
+                {
+                    // enable
+                    img[indexDalee].Visible = true;
+                    this.Invalidate();
+                }
+        }
+        public static void AddFlash(XmlElement el, System.Windows.Forms.Form f)
+        {
+            Point location = new Point();
+            Size size = new Size();
+            string src;
+            try
+            {
+                if (!string.IsNullOrEmpty(el.GetAttribute("location")))
+                {
+                    location.X = int.Parse(el.GetAttribute("location").Split(';')[0]);
+                    location.Y = int.Parse(el.GetAttribute("location").Split(';')[1]);
+                }
+
+                if (!string.IsNullOrEmpty(el.GetAttribute("size")))
+                {
+                    size.Width = int.Parse(el.GetAttribute("size").Split(';')[0]);
+                    size.Height = int.Parse(el.GetAttribute("size").Split(';')[1]);
+                }
+
+                src = el.GetAttribute("src");
+            }
+            catch (Exception ex)
+            {
+                HelperClass.CrashLog.AddCrash(new Exception("AddFlash::ERROR IN ARGUMENTS", ex));
+                return;
+            }
+
+            try
+            {
+                AxShockwaveFlashObjects.AxShockwaveFlash Flash = new AxShockwaveFlashObjects.AxShockwaveFlash();
+                System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(acceptaccount));
+                ((System.ComponentModel.ISupportInitialize)(Flash)).BeginInit();
+                f.SuspendLayout();
+                // 
+                // Flash
+                // 
+                Flash.Enabled = true;
+                Flash.Location = location;
+                Flash.Name = "Flash";
+                Flash.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Flash.OcxState")));
+                Flash.Size = new Size(size.Width, size.Height);
+                //Flash.SetZoomRect(0, 0, 1280, 184);
+                Flash.TabIndex = 0;
+                f.Controls.Add(Flash);
+                ((System.ComponentModel.ISupportInitialize)(Flash)).EndInit();
+                f.ResumeLayout(false);
+
+                Flash.LoadMovie(0, System.IO.Directory.GetCurrentDirectory() +
+       System.IO.Path.DirectorySeparatorChar + src);
+                Flash.Play();
+                //Flash.ClientRectangle = new Rectangle(0, 0, 1280, 184);
+                //Flash.ClientSize = size;
+                //Flash.Dock = DockStyle.None;
+                Flash.ScaleMode = 1;
+
+                Flash.Size = new Size(size.Width, size.Height);
+                //Flash.Pan(100, 100, 0);
+                //Flash.Zoom(50);
+                lFlash.Add(Flash);
+                Ipaybox.Option["can-flash-initialize"] = "true";
+            }
+            catch (Exception ex)
+            {
+                Ipaybox.Option["can-flash-initialize"] = "false";
+                HelperClass.CrashLog.AddCrash(new Exception("Невозможно инициализировать флэш ролик", ex));
+            }
+        }
+        private void ShowWarning(int x, int y)
+        {
+            Bitmap bmp = new Bitmap(Ipaybox.StartupPath + @"\" + "\\osmp17\\warning.gif");
+            img[img_count] = new PictureBox();
+            img[img_count].Location = new Point(x, y);
+            img[img_count].Image = bmp;
+            img[img_count].Size = bmp.Size;
+            img[img_count].Visible = true;
+            this.Controls.Add(img[img_count]);
+            img_count++;
+        }
+        private void AddProviderImage(XmlElement el)
+        {
+            string location = el.GetAttribute("location");
+            string limg = Ipaybox.GetImageFromInterface_Prv(Ipaybox.PRV_SELECTED_ID);
+            string size = el.GetAttribute("size");
+
+            int X = int.Parse(location.Split(';')[0]);
+            int Y = int.Parse(location.Split(';')[1]);
+
+            Bitmap bmp = new Bitmap(Ipaybox.StartupPath + @"\" + limg);
+            img[img_count] = new PictureBox();
+            img[img_count].Location = new Point(X, Y);
+            img[img_count].Image = bmp;
+
+            if (size != "")
+            {
+                X = int.Parse(size.Split(';')[0]);
+                Y = int.Parse(size.Split(';')[1]);
+                img[img_count].SizeMode = PictureBoxSizeMode.StretchImage;
+                img[img_count].Size = new Size(X, Y);
+
+            }
+            else
+            {
+                img[img_count].Size = bmp.Size;
+            }
+            img[img_count].Visible = true;
+            //this.Controls.Add(img[img_count]);
+            img_count++;
+        }
+        public void AddLabel( string ltext, Point lpoint, string font, string size, string color)
+        {
+            labels[labels_count] = new Label();
+            //labels[label_count].Parent = img[1];
+            labels[labels_count].Text = ltext;
+            labels[labels_count].BackColor = Color.Transparent;
+            labels[labels_count].Location = lpoint;
+            labels[labels_count].TextAlign = ContentAlignment.BottomCenter;
+
+            labels[labels_count].AutoSize = true;
+            // Цвет
+         
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+
+            if (color.Length > 5)
+            {
+                red = int.Parse(color.Split(';')[0]);
+                green = int.Parse(color.Split(';')[1]);
+                blue = int.Parse(color.Split(';')[2]);
+
+                labels[labels_count].ForeColor = Color.FromArgb(red, green, blue);
+            }
+
+            if (font.Length != 0 && size.Length != 0)
+            {
+                labels[labels_count].Font = new Font(font, float.Parse(size));
+            }
+
+            this.Controls.Add(labels[labels_count]);
+            labels_count++;
+        }
+        private void AddButton(XmlElement el)
+        {
+            string location = el.GetAttribute("location");
+            string limg = el.GetAttribute("img");
+
+            int X = int.Parse(location.Split(';')[0]);
+            int Y = int.Parse(location.Split(';')[1]);
+
+            Bitmap bmp = new Bitmap(Ipaybox.StartupPath + @"\" + limg);
+            img[img_count] = new PictureBox();
+            img[img_count].Location = new Point(X, Y);
+            img[img_count].Image = bmp;
+            img[img_count].Size = bmp.Size;
+            img[img_count].Tag = el.GetAttribute("value").ToLower();
+
+            if ((string)img[img_count].Tag == "ok")
+            {
+                img[img_count].Visible = false;
+                indexDalee = img_count;
+            }
+
+            if(!string.IsNullOrEmpty(el.GetAttribute("value")))
+                img[img_count].Click += new System.EventHandler(this.Pic_Click);
+
+            //this.Controls.Add(img[img_count]);
+
+            img_count++;
+        }
+        private string GetAccountValue()
+        {
+            string[] opt = Ipaybox.curPay.Options.Split('|');
+            
+            for (int i = 0; i < opt.Length; i++)
+            {
+                if (opt[i] != "")
+                {
+                    string[] param = opt[i].Split('%');
+                    if (param[1].ToLower() == "account")
+                        return param[2];
+                }
+            }
+
+            return "";
+        }
+        private void Pic_Click(object sender, System.EventArgs e)
+        {
+            Sound.Play(Ipaybox.StartupPath.TrimEnd('\\') + "\\sounds\\" + "click1.wav");
+            PictureBox pb = (PictureBox)sender;
+            //MessageBox.Show("CLICK PRV=" + pb.Tag);
+            string tag = pb.Tag.ToString().ToLower();
+
+            // Нажата не кнопка на клаве
+            switch (tag)
+            {
+                case "ok":
+                        Ipaybox.AddToLog(Ipaybox.Logs.Main, "Номер подтвержден");
+                        Ipaybox.curPay.IsAccountConfirmed = true;
+                        Ipaybox.StartForm.Main_Process();
+                        this.Dispose();
+                    break;
+                case "vmenu":
+                    Ipaybox.AddToLog(Ipaybox.Logs.Main, "Возврат в главное меню.");
+                    ExitForm();
+                    break;
+
+               
+                case "goprev":
+                    Ipaybox.AddToLog(Ipaybox.Logs.Main, "Возврат в предыдущее меню.");
+                    Ipaybox.cFormIndex = Ipaybox.cFormIndex - 1;
+                    Ipaybox.StartForm.Main_Process();
+                    this.Dispose();
+                    //ExitForm();
+                    break;
+            }
+        }
+        public bool IsSelectedProviderOnline()
+        {
+            string root = Ipaybox.PROVIDER_XML.GetAttribute("type");
+
+            if (root.ToLower() == "online")
+                return true;
+
+            return false;
+
+        }
+        private void ExitForm()
+        {
+            Ipaybox.FlushToMain();
+            Ipaybox.StartForm.Main_Process();
+            this.Dispose();
+
+        }
+        private void Reset_Timer()
+        {
+            flush_timer.Stop();
+            flush_timer.Start();
+        }
+
+        private void flush_timer_Tick_1(object sender, EventArgs e)
+        {
+            ExitForm();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
+    }
+}

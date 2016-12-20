@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/Zeus/!svn/ver/22/branches/Zeus/Zeus/Printers/Printers
+END
+StarIOPort.dll
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/Zeus/!svn/ver/22/branches/Zeus/Zeus/Printers/Printers/StarIOPort.dll
+END
+ICT.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Zeus/!svn/ver/34/branches/Zeus/Zeus/Printers/Printers/ICT.cs
+END
+Independed.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Zeus/!svn/ver/34/branches/Zeus/Zeus/Printers/Printers/Independed.cs
+END
+app.config
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/Zeus/!svn/ver/22/branches/Zeus/Zeus/Printers/Printers/app.config
+END
+Printers.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Zeus/!svn/ver/22/branches/Zeus/Zeus/Printers/Printers/Printers.csproj
+END
+TUP900.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/Zeus/!svn/ver/33/branches/Zeus/Zeus/Printers/Printers/TUP900.cs
+END
+Printer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/Zeus/!svn/ver/22/branches/Zeus/Zeus/Printers/Printers/Printer.cs
+END
+StarTUP900CodePage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/Zeus/!svn/ver/22/branches/Zeus/Zeus/Printers/Printers/StarTUP900CodePage.cs
+END
+Citizen.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/Zeus/!svn/ver/33/branches/Zeus/Zeus/Printers/Printers/Citizen.cs
+END
+DatabaseSetup.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Zeus/!svn/ver/22/branches/Zeus/Zeus/Printers/Printers/DatabaseSetup.cs
+END
+av268.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Zeus/!svn/ver/32/branches/Zeus/Zeus/Printers/Printers/av268.cs
+END
+T400.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/Zeus/!svn/ver/34/branches/Zeus/Zeus/Printers/Printers/T400.cs
+END
+VKP80.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Zeus/!svn/ver/33/branches/Zeus/Zeus/Printers/Printers/VKP80.cs
+END

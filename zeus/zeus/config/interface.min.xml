@@ -1,0 +1,2069 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<interfaceList>
+  <ifc ver="3.15" corever="2.0.1.2"/>
+  <interfaceList>
+    <interface id="4" name="zeus" folder="zeus17">
+      <system_forms>
+        <form name="main_menu" bgimg="zeus17\bg_main.png">
+          <top count="16" startPos="35;254" dx="248" dy="178" hcount="4" vcount="4">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="555;950" img="zeus17\information_n.gif" value="information"/>
+            </buttons>
+            <banners>
+              <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+            </banners>
+          </top>
+          <group count="4" startPos="1027;254" bgimg="zeus17\bg_main.png" dx="248" dy="178" hcount="1" vcount="4">
+            <buttons>
+              <button location="37;860" img="zeus17\back.gif" value="vmenu"/>
+              <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+              <button location="1029;860" img="zeus17\forward.gif" value="ok"/>
+            </buttons>
+          </group>
+          <list count="15" startPos="35;254" bgimg="kk\bg_main.png" dx="248" dy="178" hcount="5" vcount="3">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="37;860" img="zeus17\back.gif" value="page--"/>
+              <button location="533;860" img="zeus17\vihod.png" value="tomenu"/>
+              <button location="1029;860" img="zeus17\forward.gif" value="page++"/>
+            </buttons>
+            <banners>
+              <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+            </banners>
+          </list>
+        </form>
+      </system_forms>
+      <keyboards>
+        <keyboard name="none" location="0;0">
+          <keys></keys>
+        </keyboard>
+        <keyboard name="digits" location="953;272">
+          <keys>
+            <key img="zeus17\digits\1.gif" location="0;0" size="84;87" value="1"/>
+            <key img="zeus17\digits\2.gif" location="99;0" size="84;87" value="2"/>
+            <key img="zeus17\digits\3.gif" location="198;0" size="84;87" value="3"/>
+            <key img="zeus17\digits\4.gif" location="0;99" size="84;87" value="4"/>
+            <key img="zeus17\digits\5.gif" location="99;99" size="84;87" value="5"/>
+            <key img="zeus17\digits\6.gif" location="198;99" size="84;87" value="6"/>
+            <key img="zeus17\digits\7.gif" location="0;198" size="84;87" value="7"/>
+            <key img="zeus17\digits\8.gif" location="99;198" size="84;87" value="8"/>
+            <key img="zeus17\digits\9.gif" location="198;198" size="84;87" value="9"/>
+            <key img="zeus17\digits\111.gif" location="0;297" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\0.gif" location="99;297" size="84;87" value="0"/>
+            <key img="zeus17\digits\999.gif" location="198;297" size="84;87" value="clear"/>
+          </keys>
+        </keyboard>
+        <keyboard name="digitsComma" location="45;517" img="zeus17\digitsComma.png">
+          <keys>
+            <key img="zeus17\digits\1.gif" location="908;-245" size="84;87" value="1"/>
+            <key img="zeus17\digits\2.gif" location="1007;-245" size="84;87" value="2"/>
+            <key img="zeus17\digits\3.gif" location="1106;-245" size="84;87" value="3"/>
+            <key img="zeus17\digits\4.gif" location="908;-146" size="84;87" value="4"/>
+            <key img="zeus17\digits\5.gif" location="1007;-146" size="84;87" value="5"/>
+            <key img="zeus17\digits\6.gif" location="1106;-146" size="84;87" value="6"/>
+            <key img="zeus17\digits\7.gif" location="908;-47" size="84;87" value="7"/>
+            <key img="zeus17\digits\8.gif" location="1007;-47" size="84;87" value="8"/>
+            <key img="zeus17\digits\9.gif" location="1106;-47" size="84;87" value="9"/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\0.gif" location="1007;52" size="84;87" value="0"/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+          </keys>
+        </keyboard>
+        <keyboard name="englText" location="45;517" img="zeus17\kkeng.png">
+          <keys>
+            <key img="zeus17\digits\empty.gif" location="908;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\empty.gif" location="1007;52" size="84;87" value=""/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="@"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="q"/>
+            <key type="hidden" location="74;76" size="67;70" value="w"/>
+            <key type="hidden" location="148;76" size="67;70" value="e"/>
+            <key type="hidden" location="222;76" size="67;70" value="r"/>
+            <key type="hidden" location="296;76" size="67;70" value="t"/>
+            <key type="hidden" location="370;76" size="67;70" value="y"/>
+            <key type="hidden" location="444;76" size="67;70" value="u"/>
+            <key type="hidden" location="518;76" size="67;70" value="i"/>
+            <key type="hidden" location="592;76" size="67;70" value="o"/>
+            <key type="hidden" location="666;76" size="67;70" value="p"/>
+            <key type="hidden" location="740;76" size="67;70" value="["/>
+            <key type="hidden" location="814;76" size="67;70" value="]"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:enghcapsText"/>
+            <key type="hidden" location="74;152" size="67;70" value="a"/>
+            <key type="hidden" location="148;152" size="67;70" value="s"/>
+            <key type="hidden" location="222;152" size="67;70" value="d"/>
+            <key type="hidden" location="296;152" size="67;70" value="f"/>
+            <key type="hidden" location="370;152" size="67;70" value="g"/>
+            <key type="hidden" location="444;152" size="67;70" value="h"/>
+            <key type="hidden" location="518;152" size="67;70" value="j"/>
+            <key type="hidden" location="592;152" size="67;70" value="k"/>
+            <key type="hidden" location="666;152" size="67;70" value="l"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:enghshiftText"/>
+            <key type="hidden" location="148;228" size="67;70" value="z"/>
+            <key type="hidden" location="222;228" size="67;70" value="x"/>
+            <key type="hidden" location="296;228" size="67;70" value="c"/>
+            <key type="hidden" location="370;228" size="67;70" value="v"/>
+            <key type="hidden" location="444;228" size="67;70" value="b"/>
+            <key type="hidden" location="518;228" size="67;70" value="n"/>
+            <key type="hidden" location="592;228" size="67;70" value="m"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:rusText"/>
+          </keys>
+        </keyboard>
+        <keyboard name="enghshiftText" location="45;517" img="zeus17\kkengshift.png">
+          <keys>
+            <key img="zeus17\digits\empty.gif" location="908;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\empty.gif" location="1007;52" size="84;87" value=""/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="@"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="Q"/>
+            <key type="hidden" location="74;76" size="67;70" value="W"/>
+            <key type="hidden" location="148;76" size="67;70" value="E"/>
+            <key type="hidden" location="222;76" size="67;70" value="R"/>
+            <key type="hidden" location="296;76" size="67;70" value="T"/>
+            <key type="hidden" location="370;76" size="67;70" value="Y"/>
+            <key type="hidden" location="444;76" size="67;70" value="U"/>
+            <key type="hidden" location="518;76" size="67;70" value="I"/>
+            <key type="hidden" location="592;76" size="67;70" value="O"/>
+            <key type="hidden" location="666;76" size="67;70" value="P"/>
+            <key type="hidden" location="740;76" size="67;70" value="["/>
+            <key type="hidden" location="814;76" size="67;70" value="]"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:enghcapsText"/>
+            <key type="hidden" location="74;152" size="67;70" value="A"/>
+            <key type="hidden" location="148;152" size="67;70" value="S"/>
+            <key type="hidden" location="222;152" size="67;70" value="D"/>
+            <key type="hidden" location="296;152" size="67;70" value="F"/>
+            <key type="hidden" location="370;152" size="67;70" value="G"/>
+            <key type="hidden" location="444;152" size="67;70" value="H"/>
+            <key type="hidden" location="518;152" size="67;70" value="J"/>
+            <key type="hidden" location="592;152" size="67;70" value="K"/>
+            <key type="hidden" location="666;152" size="67;70" value="L"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:englText"/>
+            <key type="hidden" location="148;228" size="67;70" value="Z"/>
+            <key type="hidden" location="222;228" size="67;70" value="X"/>
+            <key type="hidden" location="296;228" size="67;70" value="C"/>
+            <key type="hidden" location="370;228" size="67;70" value="V"/>
+            <key type="hidden" location="444;228" size="67;70" value="B"/>
+            <key type="hidden" location="518;228" size="67;70" value="N"/>
+            <key type="hidden" location="592;228" size="67;70" value="M"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:rushshiftText"/>
+          </keys>
+        </keyboard>
+        <keyboard name="enghcapsText" location="45;517" img="zeus17\kkengcaps.png">
+          <keys>
+            <key img="zeus17\digits\empty.gif" location="908;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\empty.gif" location="1007;52" size="84;87" value=""/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="@"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="Q"/>
+            <key type="hidden" location="74;76" size="67;70" value="W"/>
+            <key type="hidden" location="148;76" size="67;70" value="E"/>
+            <key type="hidden" location="222;76" size="67;70" value="R"/>
+            <key type="hidden" location="296;76" size="67;70" value="T"/>
+            <key type="hidden" location="370;76" size="67;70" value="Y"/>
+            <key type="hidden" location="444;76" size="67;70" value="U"/>
+            <key type="hidden" location="518;76" size="67;70" value="I"/>
+            <key type="hidden" location="592;76" size="67;70" value="O"/>
+            <key type="hidden" location="666;76" size="67;70" value="P"/>
+            <key type="hidden" location="740;76" size="67;70" value="["/>
+            <key type="hidden" location="814;76" size="67;70" value="]"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:englText"/>
+            <key type="hidden" location="74;152" size="67;70" value="A"/>
+            <key type="hidden" location="148;152" size="67;70" value="S"/>
+            <key type="hidden" location="222;152" size="67;70" value="D"/>
+            <key type="hidden" location="296;152" size="67;70" value="F"/>
+            <key type="hidden" location="370;152" size="67;70" value="G"/>
+            <key type="hidden" location="444;152" size="67;70" value="H"/>
+            <key type="hidden" location="518;152" size="67;70" value="J"/>
+            <key type="hidden" location="592;152" size="67;70" value="K"/>
+            <key type="hidden" location="666;152" size="67;70" value="L"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:enghshiftText"/>
+            <key type="hidden" location="148;228" size="67;70" value="Z"/>
+            <key type="hidden" location="222;228" size="67;70" value="X"/>
+            <key type="hidden" location="296;228" size="67;70" value="C"/>
+            <key type="hidden" location="370;228" size="67;70" value="V"/>
+            <key type="hidden" location="444;228" size="67;70" value="B"/>
+            <key type="hidden" location="518;228" size="67;70" value="N"/>
+            <key type="hidden" location="592;228" size="67;70" value="M"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:rushcapsText"/>
+          </keys>
+        </keyboard>
+        <keyboard name="engl" location="45;517" img="zeus17\kkeng.png">
+          <keys>
+            <key img="zeus17\digits\1.gif" location="908;-245" size="84;87" value="1"/>
+            <key img="zeus17\digits\2.gif" location="1007;-245" size="84;87" value="2"/>
+            <key img="zeus17\digits\3.gif" location="1106;-245" size="84;87" value="3"/>
+            <key img="zeus17\digits\4.gif" location="908;-146" size="84;87" value="4"/>
+            <key img="zeus17\digits\5.gif" location="1007;-146" size="84;87" value="5"/>
+            <key img="zeus17\digits\6.gif" location="1106;-146" size="84;87" value="6"/>
+            <key img="zeus17\digits\7.gif" location="908;-47" size="84;87" value="7"/>
+            <key img="zeus17\digits\8.gif" location="1007;-47" size="84;87" value="8"/>
+            <key img="zeus17\digits\9.gif" location="1106;-47" size="84;87" value="9"/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\0.gif" location="1007;52" size="84;87" value="0"/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="@"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="q"/>
+            <key type="hidden" location="74;76" size="67;70" value="w"/>
+            <key type="hidden" location="148;76" size="67;70" value="e"/>
+            <key type="hidden" location="222;76" size="67;70" value="r"/>
+            <key type="hidden" location="296;76" size="67;70" value="t"/>
+            <key type="hidden" location="370;76" size="67;70" value="y"/>
+            <key type="hidden" location="444;76" size="67;70" value="u"/>
+            <key type="hidden" location="518;76" size="67;70" value="i"/>
+            <key type="hidden" location="592;76" size="67;70" value="o"/>
+            <key type="hidden" location="666;76" size="67;70" value="p"/>
+            <key type="hidden" location="740;76" size="67;70" value="["/>
+            <key type="hidden" location="814;76" size="67;70" value="]"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:enghcaps"/>
+            <key type="hidden" location="74;152" size="67;70" value="a"/>
+            <key type="hidden" location="148;152" size="67;70" value="s"/>
+            <key type="hidden" location="222;152" size="67;70" value="d"/>
+            <key type="hidden" location="296;152" size="67;70" value="f"/>
+            <key type="hidden" location="370;152" size="67;70" value="g"/>
+            <key type="hidden" location="444;152" size="67;70" value="h"/>
+            <key type="hidden" location="518;152" size="67;70" value="j"/>
+            <key type="hidden" location="592;152" size="67;70" value="k"/>
+            <key type="hidden" location="666;152" size="67;70" value="l"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:enghshift"/>
+            <key type="hidden" location="148;228" size="67;70" value="z"/>
+            <key type="hidden" location="222;228" size="67;70" value="x"/>
+            <key type="hidden" location="296;228" size="67;70" value="c"/>
+            <key type="hidden" location="370;228" size="67;70" value="v"/>
+            <key type="hidden" location="444;228" size="67;70" value="b"/>
+            <key type="hidden" location="518;228" size="67;70" value="n"/>
+            <key type="hidden" location="592;228" size="67;70" value="m"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:rus"/>
+          </keys>
+        </keyboard>
+        <keyboard name="enghshift" location="45;517" img="zeus17\kkengshift.png">
+          <keys>
+            <key img="zeus17\digits\1.gif" location="908;-245" size="84;87" value="1"/>
+            <key img="zeus17\digits\2.gif" location="1007;-245" size="84;87" value="2"/>
+            <key img="zeus17\digits\3.gif" location="1106;-245" size="84;87" value="3"/>
+            <key img="zeus17\digits\4.gif" location="908;-146" size="84;87" value="4"/>
+            <key img="zeus17\digits\5.gif" location="1007;-146" size="84;87" value="5"/>
+            <key img="zeus17\digits\6.gif" location="1106;-146" size="84;87" value="6"/>
+            <key img="zeus17\digits\7.gif" location="908;-47" size="84;87" value="7"/>
+            <key img="zeus17\digits\8.gif" location="1007;-47" size="84;87" value="8"/>
+            <key img="zeus17\digits\9.gif" location="1106;-47" size="84;87" value="9"/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\0.gif" location="1007;52" size="84;87" value="0"/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="@"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="Q"/>
+            <key type="hidden" location="74;76" size="67;70" value="W"/>
+            <key type="hidden" location="148;76" size="67;70" value="E"/>
+            <key type="hidden" location="222;76" size="67;70" value="R"/>
+            <key type="hidden" location="296;76" size="67;70" value="T"/>
+            <key type="hidden" location="370;76" size="67;70" value="Y"/>
+            <key type="hidden" location="444;76" size="67;70" value="U"/>
+            <key type="hidden" location="518;76" size="67;70" value="I"/>
+            <key type="hidden" location="592;76" size="67;70" value="O"/>
+            <key type="hidden" location="666;76" size="67;70" value="P"/>
+            <key type="hidden" location="740;76" size="67;70" value="["/>
+            <key type="hidden" location="814;76" size="67;70" value="]"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:enghcaps"/>
+            <key type="hidden" location="74;152" size="67;70" value="A"/>
+            <key type="hidden" location="148;152" size="67;70" value="S"/>
+            <key type="hidden" location="222;152" size="67;70" value="D"/>
+            <key type="hidden" location="296;152" size="67;70" value="F"/>
+            <key type="hidden" location="370;152" size="67;70" value="G"/>
+            <key type="hidden" location="444;152" size="67;70" value="H"/>
+            <key type="hidden" location="518;152" size="67;70" value="J"/>
+            <key type="hidden" location="592;152" size="67;70" value="K"/>
+            <key type="hidden" location="666;152" size="67;70" value="L"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:engl"/>
+            <key type="hidden" location="148;228" size="67;70" value="Z"/>
+            <key type="hidden" location="222;228" size="67;70" value="X"/>
+            <key type="hidden" location="296;228" size="67;70" value="C"/>
+            <key type="hidden" location="370;228" size="67;70" value="V"/>
+            <key type="hidden" location="444;228" size="67;70" value="B"/>
+            <key type="hidden" location="518;228" size="67;70" value="N"/>
+            <key type="hidden" location="592;228" size="67;70" value="M"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:rushshift"/>
+          </keys>
+        </keyboard>
+        <keyboard name="enghcaps" location="45;517" img="zeus17\kkengcaps.png">
+          <keys>
+            <key img="zeus17\digits\1.gif" location="908;-245" size="84;87" value="1"/>
+            <key img="zeus17\digits\2.gif" location="1007;-245" size="84;87" value="2"/>
+            <key img="zeus17\digits\3.gif" location="1106;-245" size="84;87" value="3"/>
+            <key img="zeus17\digits\4.gif" location="908;-146" size="84;87" value="4"/>
+            <key img="zeus17\digits\5.gif" location="1007;-146" size="84;87" value="5"/>
+            <key img="zeus17\digits\6.gif" location="1106;-146" size="84;87" value="6"/>
+            <key img="zeus17\digits\7.gif" location="908;-47" size="84;87" value="7"/>
+            <key img="zeus17\digits\8.gif" location="1007;-47" size="84;87" value="8"/>
+            <key img="zeus17\digits\9.gif" location="1106;-47" size="84;87" value="9"/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\0.gif" location="1007;52" size="84;87" value="0"/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="@"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="Q"/>
+            <key type="hidden" location="74;76" size="67;70" value="W"/>
+            <key type="hidden" location="148;76" size="67;70" value="E"/>
+            <key type="hidden" location="222;76" size="67;70" value="R"/>
+            <key type="hidden" location="296;76" size="67;70" value="T"/>
+            <key type="hidden" location="370;76" size="67;70" value="Y"/>
+            <key type="hidden" location="444;76" size="67;70" value="U"/>
+            <key type="hidden" location="518;76" size="67;70" value="I"/>
+            <key type="hidden" location="592;76" size="67;70" value="O"/>
+            <key type="hidden" location="666;76" size="67;70" value="P"/>
+            <key type="hidden" location="740;76" size="67;70" value="["/>
+            <key type="hidden" location="814;76" size="67;70" value="]"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:engl"/>
+            <key type="hidden" location="74;152" size="67;70" value="A"/>
+            <key type="hidden" location="148;152" size="67;70" value="S"/>
+            <key type="hidden" location="222;152" size="67;70" value="D"/>
+            <key type="hidden" location="296;152" size="67;70" value="F"/>
+            <key type="hidden" location="370;152" size="67;70" value="G"/>
+            <key type="hidden" location="444;152" size="67;70" value="H"/>
+            <key type="hidden" location="518;152" size="67;70" value="J"/>
+            <key type="hidden" location="592;152" size="67;70" value="K"/>
+            <key type="hidden" location="666;152" size="67;70" value="L"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:enghshift"/>
+            <key type="hidden" location="148;228" size="67;70" value="Z"/>
+            <key type="hidden" location="222;228" size="67;70" value="X"/>
+            <key type="hidden" location="296;228" size="67;70" value="C"/>
+            <key type="hidden" location="370;228" size="67;70" value="V"/>
+            <key type="hidden" location="444;228" size="67;70" value="B"/>
+            <key type="hidden" location="518;228" size="67;70" value="N"/>
+            <key type="hidden" location="592;228" size="67;70" value="M"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:rushcaps"/>
+          </keys>
+        </keyboard>
+        <keyboard name="rusText" location="45;517" img="zeus17\kkrus.png">
+          <keys>
+            <key img="zeus17\digits\empty.gif" location="908;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\empty.gif" location="1007;52" size="84;87" value=""/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="ё"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="й"/>
+            <key type="hidden" location="74;76" size="67;70" value="ц"/>
+            <key type="hidden" location="148;76" size="67;70" value="у"/>
+            <key type="hidden" location="222;76" size="67;70" value="к"/>
+            <key type="hidden" location="296;76" size="67;70" value="е"/>
+            <key type="hidden" location="370;76" size="67;70" value="н"/>
+            <key type="hidden" location="444;76" size="67;70" value="г"/>
+            <key type="hidden" location="518;76" size="67;70" value="ш"/>
+            <key type="hidden" location="592;76" size="67;70" value="щ"/>
+            <key type="hidden" location="666;76" size="67;70" value="з"/>
+            <key type="hidden" location="740;76" size="67;70" value="х"/>
+            <key type="hidden" location="814;76" size="67;70" value="ъ"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:rushcapsText"/>
+            <key type="hidden" location="74;152" size="67;70" value="ф"/>
+            <key type="hidden" location="148;152" size="67;70" value="ы"/>
+            <key type="hidden" location="222;152" size="67;70" value="в"/>
+            <key type="hidden" location="296;152" size="67;70" value="а"/>
+            <key type="hidden" location="370;152" size="67;70" value="п"/>
+            <key type="hidden" location="444;152" size="67;70" value="р"/>
+            <key type="hidden" location="518;152" size="67;70" value="о"/>
+            <key type="hidden" location="592;152" size="67;70" value="л"/>
+            <key type="hidden" location="666;152" size="67;70" value="д"/>
+            <key type="hidden" location="740;152" size="67;70" value="ж"/>
+            <key type="hidden" location="814;152" size="67;70" value="э"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:rushshiftText"/>
+            <key type="hidden" location="148;228" size="67;70" value="я"/>
+            <key type="hidden" location="222;228" size="67;70" value="ч"/>
+            <key type="hidden" location="296;228" size="67;70" value="с"/>
+            <key type="hidden" location="370;228" size="67;70" value="м"/>
+            <key type="hidden" location="444;228" size="67;70" value="и"/>
+            <key type="hidden" location="518;228" size="67;70" value="т"/>
+            <key type="hidden" location="592;228" size="67;70" value="ь"/>
+            <key type="hidden" location="666;228" size="67;70" value="б"/>
+            <key type="hidden" location="740;228" size="67;70" value="ю"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:englText"/>
+          </keys>
+        </keyboard>
+        <keyboard name="rushshiftText" location="45;517" img="zeus17\kkrusshift.png">
+          <keys>
+            <key img="zeus17\digits\empty.gif" location="908;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\empty.gif" location="1007;52" size="84;87" value=""/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="Ё"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="Й"/>
+            <key type="hidden" location="74;76" size="67;70" value="Ц"/>
+            <key type="hidden" location="148;76" size="67;70" value="У"/>
+            <key type="hidden" location="222;76" size="67;70" value="К"/>
+            <key type="hidden" location="296;76" size="67;70" value="Е"/>
+            <key type="hidden" location="370;76" size="67;70" value="Н"/>
+            <key type="hidden" location="444;76" size="67;70" value="Г"/>
+            <key type="hidden" location="518;76" size="67;70" value="Ш"/>
+            <key type="hidden" location="592;76" size="67;70" value="Щ"/>
+            <key type="hidden" location="666;76" size="67;70" value="З"/>
+            <key type="hidden" location="740;76" size="67;70" value="Х"/>
+            <key type="hidden" location="814;76" size="67;70" value="Ъ"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:rushcapsText"/>
+            <key type="hidden" location="74;152" size="67;70" value="Ф"/>
+            <key type="hidden" location="148;152" size="67;70" value="Ы"/>
+            <key type="hidden" location="222;152" size="67;70" value="В"/>
+            <key type="hidden" location="296;152" size="67;70" value="А"/>
+            <key type="hidden" location="370;152" size="67;70" value="П"/>
+            <key type="hidden" location="444;152" size="67;70" value="Р"/>
+            <key type="hidden" location="518;152" size="67;70" value="О"/>
+            <key type="hidden" location="592;152" size="67;70" value="Л"/>
+            <key type="hidden" location="666;152" size="67;70" value="Д"/>
+            <key type="hidden" location="740;152" size="67;70" value="Ж"/>
+            <key type="hidden" location="814;152" size="67;70" value="Э"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:rusText"/>
+            <key type="hidden" location="148;228" size="67;70" value="Я"/>
+            <key type="hidden" location="222;228" size="67;70" value="Ч"/>
+            <key type="hidden" location="296;228" size="67;70" value="С"/>
+            <key type="hidden" location="370;228" size="67;70" value="М"/>
+            <key type="hidden" location="444;228" size="67;70" value="И"/>
+            <key type="hidden" location="518;228" size="67;70" value="Т"/>
+            <key type="hidden" location="592;228" size="67;70" value="Ь"/>
+            <key type="hidden" location="666;228" size="67;70" value="Б"/>
+            <key type="hidden" location="740;228" size="67;70" value="Ю"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:enghshiftText"/>
+          </keys>
+        </keyboard>
+        <keyboard name="rushcapsText" location="45;517" img="zeus17\kkruscaps.png">
+          <keys>
+            <key img="zeus17\digits\empty.gif" location="908;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-245" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-146" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="908;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1007;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\empty.gif" location="1106;-47" size="84;87" value=""/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\empty.gif" location="1007;52" size="84;87" value=""/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="Ё"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="Й"/>
+            <key type="hidden" location="74;76" size="67;70" value="Ц"/>
+            <key type="hidden" location="148;76" size="67;70" value="У"/>
+            <key type="hidden" location="222;76" size="67;70" value="К"/>
+            <key type="hidden" location="296;76" size="67;70" value="Е"/>
+            <key type="hidden" location="370;76" size="67;70" value="Н"/>
+            <key type="hidden" location="444;76" size="67;70" value="Г"/>
+            <key type="hidden" location="518;76" size="67;70" value="Ш"/>
+            <key type="hidden" location="592;76" size="67;70" value="Щ"/>
+            <key type="hidden" location="666;76" size="67;70" value="З"/>
+            <key type="hidden" location="740;76" size="67;70" value="Х"/>
+            <key type="hidden" location="814;76" size="67;70" value="Ъ"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:rusText"/>
+            <key type="hidden" location="74;152" size="67;70" value="Ф"/>
+            <key type="hidden" location="148;152" size="67;70" value="Ы"/>
+            <key type="hidden" location="222;152" size="67;70" value="В"/>
+            <key type="hidden" location="296;152" size="67;70" value="А"/>
+            <key type="hidden" location="370;152" size="67;70" value="П"/>
+            <key type="hidden" location="444;152" size="67;70" value="Р"/>
+            <key type="hidden" location="518;152" size="67;70" value="О"/>
+            <key type="hidden" location="592;152" size="67;70" value="Л"/>
+            <key type="hidden" location="666;152" size="67;70" value="Д"/>
+            <key type="hidden" location="740;152" size="67;70" value="Ж"/>
+            <key type="hidden" location="814;152" size="67;70" value="Э"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:rushshiftText"/>
+            <key type="hidden" location="148;228" size="67;70" value="Я"/>
+            <key type="hidden" location="222;228" size="67;70" value="Ч"/>
+            <key type="hidden" location="296;228" size="67;70" value="С"/>
+            <key type="hidden" location="370;228" size="67;70" value="М"/>
+            <key type="hidden" location="444;228" size="67;70" value="И"/>
+            <key type="hidden" location="518;228" size="67;70" value="Т"/>
+            <key type="hidden" location="592;228" size="67;70" value="Ь"/>
+            <key type="hidden" location="666;228" size="67;70" value="Б"/>
+            <key type="hidden" location="740;228" size="67;70" value="Ю"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:enghcapsText"/>
+          </keys>
+        </keyboard>
+        <keyboard name="rus" location="45;517" img="zeus17\kkrus.png">
+          <keys>
+            <key img="zeus17\digits\1.gif" location="908;-245" size="84;87" value="1"/>
+            <key img="zeus17\digits\2.gif" location="1007;-245" size="84;87" value="2"/>
+            <key img="zeus17\digits\3.gif" location="1106;-245" size="84;87" value="3"/>
+            <key img="zeus17\digits\4.gif" location="908;-146" size="84;87" value="4"/>
+            <key img="zeus17\digits\5.gif" location="1007;-146" size="84;87" value="5"/>
+            <key img="zeus17\digits\6.gif" location="1106;-146" size="84;87" value="6"/>
+            <key img="zeus17\digits\7.gif" location="908;-47" size="84;87" value="7"/>
+            <key img="zeus17\digits\8.gif" location="1007;-47" size="84;87" value="8"/>
+            <key img="zeus17\digits\9.gif" location="1106;-47" size="84;87" value="9"/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\0.gif" location="1007;52" size="84;87" value="0"/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="ё"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="й"/>
+            <key type="hidden" location="74;76" size="67;70" value="ц"/>
+            <key type="hidden" location="148;76" size="67;70" value="у"/>
+            <key type="hidden" location="222;76" size="67;70" value="к"/>
+            <key type="hidden" location="296;76" size="67;70" value="е"/>
+            <key type="hidden" location="370;76" size="67;70" value="н"/>
+            <key type="hidden" location="444;76" size="67;70" value="г"/>
+            <key type="hidden" location="518;76" size="67;70" value="ш"/>
+            <key type="hidden" location="592;76" size="67;70" value="щ"/>
+            <key type="hidden" location="666;76" size="67;70" value="з"/>
+            <key type="hidden" location="740;76" size="67;70" value="х"/>
+            <key type="hidden" location="814;76" size="67;70" value="ъ"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:rushcaps"/>
+            <key type="hidden" location="74;152" size="67;70" value="ф"/>
+            <key type="hidden" location="148;152" size="67;70" value="ы"/>
+            <key type="hidden" location="222;152" size="67;70" value="в"/>
+            <key type="hidden" location="296;152" size="67;70" value="а"/>
+            <key type="hidden" location="370;152" size="67;70" value="п"/>
+            <key type="hidden" location="444;152" size="67;70" value="р"/>
+            <key type="hidden" location="518;152" size="67;70" value="о"/>
+            <key type="hidden" location="592;152" size="67;70" value="л"/>
+            <key type="hidden" location="666;152" size="67;70" value="д"/>
+            <key type="hidden" location="740;152" size="67;70" value="ж"/>
+            <key type="hidden" location="814;152" size="67;70" value="э"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:rushshift"/>
+            <key type="hidden" location="148;228" size="67;70" value="я"/>
+            <key type="hidden" location="222;228" size="67;70" value="ч"/>
+            <key type="hidden" location="296;228" size="67;70" value="с"/>
+            <key type="hidden" location="370;228" size="67;70" value="м"/>
+            <key type="hidden" location="444;228" size="67;70" value="и"/>
+            <key type="hidden" location="518;228" size="67;70" value="т"/>
+            <key type="hidden" location="592;228" size="67;70" value="ь"/>
+            <key type="hidden" location="666;228" size="67;70" value="б"/>
+            <key type="hidden" location="740;228" size="67;70" value="ю"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:engl"/>
+          </keys>
+        </keyboard>
+        <keyboard name="rushshift" location="45;517" img="zeus17\kkrusshift.png">
+          <keys>
+            <key img="zeus17\digits\1.gif" location="908;-245" size="84;87" value="1"/>
+            <key img="zeus17\digits\2.gif" location="1007;-245" size="84;87" value="2"/>
+            <key img="zeus17\digits\3.gif" location="1106;-245" size="84;87" value="3"/>
+            <key img="zeus17\digits\4.gif" location="908;-146" size="84;87" value="4"/>
+            <key img="zeus17\digits\5.gif" location="1007;-146" size="84;87" value="5"/>
+            <key img="zeus17\digits\6.gif" location="1106;-146" size="84;87" value="6"/>
+            <key img="zeus17\digits\7.gif" location="908;-47" size="84;87" value="7"/>
+            <key img="zeus17\digits\8.gif" location="1007;-47" size="84;87" value="8"/>
+            <key img="zeus17\digits\9.gif" location="1106;-47" size="84;87" value="9"/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\0.gif" location="1007;52" size="84;87" value="0"/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="Ё"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="Й"/>
+            <key type="hidden" location="74;76" size="67;70" value="Ц"/>
+            <key type="hidden" location="148;76" size="67;70" value="У"/>
+            <key type="hidden" location="222;76" size="67;70" value="К"/>
+            <key type="hidden" location="296;76" size="67;70" value="Е"/>
+            <key type="hidden" location="370;76" size="67;70" value="Н"/>
+            <key type="hidden" location="444;76" size="67;70" value="Г"/>
+            <key type="hidden" location="518;76" size="67;70" value="Ш"/>
+            <key type="hidden" location="592;76" size="67;70" value="Щ"/>
+            <key type="hidden" location="666;76" size="67;70" value="З"/>
+            <key type="hidden" location="740;76" size="67;70" value="Х"/>
+            <key type="hidden" location="814;76" size="67;70" value="Ъ"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:rushcaps"/>
+            <key type="hidden" location="74;152" size="67;70" value="Ф"/>
+            <key type="hidden" location="148;152" size="67;70" value="Ы"/>
+            <key type="hidden" location="222;152" size="67;70" value="В"/>
+            <key type="hidden" location="296;152" size="67;70" value="А"/>
+            <key type="hidden" location="370;152" size="67;70" value="П"/>
+            <key type="hidden" location="444;152" size="67;70" value="Р"/>
+            <key type="hidden" location="518;152" size="67;70" value="О"/>
+            <key type="hidden" location="592;152" size="67;70" value="Л"/>
+            <key type="hidden" location="666;152" size="67;70" value="Д"/>
+            <key type="hidden" location="740;152" size="67;70" value="Ж"/>
+            <key type="hidden" location="814;152" size="67;70" value="Э"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:rus"/>
+            <key type="hidden" location="148;228" size="67;70" value="Я"/>
+            <key type="hidden" location="222;228" size="67;70" value="Ч"/>
+            <key type="hidden" location="296;228" size="67;70" value="С"/>
+            <key type="hidden" location="370;228" size="67;70" value="М"/>
+            <key type="hidden" location="444;228" size="67;70" value="И"/>
+            <key type="hidden" location="518;228" size="67;70" value="Т"/>
+            <key type="hidden" location="592;228" size="67;70" value="Ь"/>
+            <key type="hidden" location="666;228" size="67;70" value="Б"/>
+            <key type="hidden" location="740;228" size="67;70" value="Ю"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:enghshift"/>
+          </keys>
+        </keyboard>
+        <keyboard name="rushcaps" location="45;517" img="zeus17\kkruscaps.png">
+          <keys>
+            <key img="zeus17\digits\1.gif" location="908;-245" size="84;87" value="1"/>
+            <key img="zeus17\digits\2.gif" location="1007;-245" size="84;87" value="2"/>
+            <key img="zeus17\digits\3.gif" location="1106;-245" size="84;87" value="3"/>
+            <key img="zeus17\digits\4.gif" location="908;-146" size="84;87" value="4"/>
+            <key img="zeus17\digits\5.gif" location="1007;-146" size="84;87" value="5"/>
+            <key img="zeus17\digits\6.gif" location="1106;-146" size="84;87" value="6"/>
+            <key img="zeus17\digits\7.gif" location="908;-47" size="84;87" value="7"/>
+            <key img="zeus17\digits\8.gif" location="1007;-47" size="84;87" value="8"/>
+            <key img="zeus17\digits\9.gif" location="1106;-47" size="84;87" value="9"/>
+            <key img="zeus17\digits\111.gif" location="908;52" size="84;87" value="clearall"/>
+            <key img="zeus17\digits\0.gif" location="1007;52" size="84;87" value="0"/>
+            <key img="zeus17\digits\999.gif" location="1106;52" size="84;87" value="clear"/>
+            <key type="hidden" location="0;0" size="67;70" value="Ё"/>
+            <key type="hidden" location="74;0" size="67;70" value="!"/>
+            <key type="hidden" location="148;0" size="67;70" value="?"/>
+            <key type="hidden" location="222;0" size="67;70" value="-"/>
+            <key type="hidden" location="296;0" size="67;70" value="+"/>
+            <key type="hidden" location="370;0" size="67;70" value="\"/>
+            <key type="hidden" location="444;0" size="67;70" value="/"/>
+            <key type="hidden" location="518;0" size="67;70" value=":"/>
+            <key type="hidden" location="592;0" size="67;70" value=";"/>
+            <key type="hidden" location="666;0" size="67;70" value="_"/>
+            <key type="hidden" location="740;0" size="67;70" value=","/>
+            <key type="hidden" location="814;0" size="67;70" value="."/>
+            <key type="hidden" location="0;76" size="67;70" value="Й"/>
+            <key type="hidden" location="74;76" size="67;70" value="Ц"/>
+            <key type="hidden" location="148;76" size="67;70" value="У"/>
+            <key type="hidden" location="222;76" size="67;70" value="К"/>
+            <key type="hidden" location="296;76" size="67;70" value="Е"/>
+            <key type="hidden" location="370;76" size="67;70" value="Н"/>
+            <key type="hidden" location="444;76" size="67;70" value="Г"/>
+            <key type="hidden" location="518;76" size="67;70" value="Ш"/>
+            <key type="hidden" location="592;76" size="67;70" value="Щ"/>
+            <key type="hidden" location="666;76" size="67;70" value="З"/>
+            <key type="hidden" location="740;76" size="67;70" value="Х"/>
+            <key type="hidden" location="814;76" size="67;70" value="Ъ"/>
+            <key type="hidden" location="0;152" size="67;70" value="keyboard:rus"/>
+            <key type="hidden" location="74;152" size="67;70" value="Ф"/>
+            <key type="hidden" location="148;152" size="67;70" value="Ы"/>
+            <key type="hidden" location="222;152" size="67;70" value="В"/>
+            <key type="hidden" location="296;152" size="67;70" value="А"/>
+            <key type="hidden" location="370;152" size="67;70" value="П"/>
+            <key type="hidden" location="444;152" size="67;70" value="Р"/>
+            <key type="hidden" location="518;152" size="67;70" value="О"/>
+            <key type="hidden" location="592;152" size="67;70" value="Л"/>
+            <key type="hidden" location="666;152" size="67;70" value="Д"/>
+            <key type="hidden" location="740;152" size="67;70" value="Ж"/>
+            <key type="hidden" location="814;152" size="67;70" value="Э"/>
+            <key type="hidden" location="0;228" size="141;70" value="keyboard:rushshift"/>
+            <key type="hidden" location="148;228" size="67;70" value="Я"/>
+            <key type="hidden" location="222;228" size="67;70" value="Ч"/>
+            <key type="hidden" location="296;228" size="67;70" value="С"/>
+            <key type="hidden" location="370;228" size="67;70" value="М"/>
+            <key type="hidden" location="444;228" size="67;70" value="И"/>
+            <key type="hidden" location="518;228" size="67;70" value="Т"/>
+            <key type="hidden" location="592;228" size="67;70" value="Ь"/>
+            <key type="hidden" location="666;228" size="67;70" value="Б"/>
+            <key type="hidden" location="740;228" size="67;70" value="Ю"/>
+            <key type="hidden" location="907;152" size="280;70" value="space"/>
+            <key type="hidden" location="907;228" size="280;70" value="keyboard:enghcaps"/>
+          </keys>
+        </keyboard>
+      </keyboards>
+      <forms>
+        <form type="edit" bgimg="zeus17\bg_main.png" name="inputSumToAmount">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Укажите ТОЧНУЮ сумму для зачисления на счет" font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="false" text-transform="uppercase"/>
+            <label location="65;385" size="825;40" text-align="left" text="" font-family="Verdana" font-size="11" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="MaskTextBox"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputDigits">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="825;40" text-align="left" text="" font-family="Verdana" font-size="11" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="MaskTextBox"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputDigitsHelpOKATO">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\help.gif" value="help"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="825;40" text-align="left" text="" font-family="Verdana" font-size="11" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+            <img location="260;262" src="zeus17\help_protokol_OKATO.png" visible="false" type="popup" size="680;472"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="MaskTextBox"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputTextHelpDEK">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\help.gif" value="help"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true"/>
+            <label location="65;385" size="825;40" text-align="left" text="" font-family="Verdana" font-size="11" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+            <img location="260;262" src="zeus17\help_dek_lschet.png" visible="false" type="popup" size="680;472"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" type="SimpleTextBox" mask="" text-align="center"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputTextHelpProtokol">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\help.gif" value="help"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true"/>
+            <label location="65;385" size="825;40" text-align="left" text="" font-family="Verdana" font-size="11" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+            <img location="260;262" src="zeus17\help_protokol_number.png" visible="false" type="popup" size="680;472"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" type="SimpleTextBox" mask="" text-align="center"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputDateDDMMYYYYHelp">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\help.gif" value="help"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="825;40" text-align="left" text="" font-family="Verdana" font-size="11" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+            <img location="1018;30" src="" visible="false"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="MaskTextBox" mask="00.00.0000"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputText">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true"/>
+            <label location="65;385" size="825;40" text-align="left" text="" font-family="Verdana" font-size="11" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" type="SimpleTextBox" mask="" text-align="center"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputPhone">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="" text-align="left" text="" font-family="Verdana" font-size="12" color="30;30;30" with-provider-name="true"/>
+            <label location="65;415" size="" text-align="left" text="Номер телефона вводится без «8»" font-family="Verdana" font-size="12" color="30;30;30"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="MaskTextBox" mask="8(000)000-00-00"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="selectCountry">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button value="key:CDPA:OK" location="240;272" img="zeus17\dpc_rus.gif"/>
+            <button value="key:AUJB:OK" location="360;272" img="zeus17\dpc_aze.gif"/>
+            <button value="key:AGSG:OK" location="480;272" img="zeus17\dpc_abz.gif"/>
+            <button value="key:YVHM:OK" location="600;272" img="zeus17\dpc_che.gif"/>
+            <button value="key:CMYA:OK" location="720;272" img="zeus17\dpc_by.gif"/>
+            <button value="key:CNFN:OK" location="840;272" img="zeus17\dpc_ukr.gif"/>
+            <button value="key:ATOV:OK" location="960;272" img="zeus17\dpc_uz.gif"/>
+            <button value="key:AKIC:OK" location="1080;272" img="zeus17\dpc_tj.gif"/>
+            <button value="key:AUEJ:OK" location="240;352" img="zeus17\dpc_kz.gif"/>
+            <button value="key:ZVXO:OK" location="360;352" img="zeus17\dpc_kg.gif"/>
+            <button value="key:CFRN:OK" location="480;352" img="zeus17\dpc_ge.gif"/>
+            <button value="key:ASHA:OK" location="600;352" img="zeus17\dpc_bu.gif"/>
+            <button value="key:BTOC:OK" location="720;352" img="zeus17\dpc_arm.gif"/>
+            <button value="key:YVHB:OK" location="840;352" img="zeus17\dpc_au.gif"/>
+            <button value="key:ASGF:OK" location="960;352" img="zeus17\dpc_mol.gif"/>
+            <button value="key:YREZ:OK" location="1080;352" img="zeus17\dpc_avs.gif"/>
+            <button value="key:YUZM:OK" location="240;432" img="zeus17\dpc_maoyta.gif"/>
+            <button value="key:YRFA:OK" location="360;432" img="zeus17\dpc_be.gif"/>
+            <button value="key:YRFB:OK" location="480;432" img="zeus17\dpc_kipr.gif"/>
+            <button value="key:YVHT:OK" location="600;432" img="zeus17\dpc_dan.gif"/>
+            <button value="key:CPDG:OK" location="720;432" img="zeus17\dpc_est.gif"/>
+            <button value="key:YRFC:OK" location="840;432" img="zeus17\dpc_fin.gif"/>
+            <button value="key:YRFD:OK" location="960;432" img="zeus17\dpc_fr.gif"/>
+            <button value="key:YUZJ:OK" location="1080;432" img="zeus17\dpc_gviana.gif"/>
+            <button value="key:YRFE:OK" location="240;512" img="zeus17\dpc_ger.gif"/>
+            <button value="key:YRFF:OK" location="360;512" img="zeus17\dpc_greece.gif"/>
+            <button value="key:YUZK:OK" location="480;512" img="zeus17\dpc_gvad.gif"/>
+            <button value="key:YVHD:OK" location="600;512" img="zeus17\dpc_hk.gif"/>
+            <button value="key:YVHP:OK" location="720;512" img="zeus17\dpc_ven.gif"/>
+            <button value="key:YRFG:OK" location="840;512" img="zeus17\dpc_irl.gif"/>
+            <button value="key:YNQZ:OK" location="960;512" img="zeus17\dpc_izrael.gif"/>
+            <button value="key:YRFH:OK" location="1080;512" img="zeus17\dpc_it.gif"/>
+            <button value="key:CSXO:OK" location="240;592" img="zeus17\dpc_keniya.gif"/>
+            <button value="key:CJGE:OK" location="360;592" img="zeus17\dpc_li.gif"/>
+            <button value="key:YRFI:OK" location="480;592" img="zeus17\dpc_lux.gif"/>
+            <button value="key:YRFJ:OK" location="600;592" img="zeus17\dpc_malta.gif"/>
+            <button value="key:YUZL:OK" location="720;592" img="zeus17\dpc_martinica.gif"/>
+            <button value="key:YUMZ:OK" location="840;592" img="zeus17\dpc_mon.gif"/>
+            <button value="key:YRFK:OK" location="960;592" img="zeus17\dpc_ne.gif"/>
+            <button value="key:YVHQ:OK" location="1080;592" img="zeus17\dpc_nor.gif"/>
+            <button value="key:YVHR:OK" location="240;672" img="zeus17\dpc_pol.gif"/>
+            <button value="key:YRFL:OK" location="360;672" img="zeus17\dpc_pg.gif"/>
+            <button value="key:YUZN:OK" location="480;672" img="zeus17\dpc_reunion.gif"/>
+            <button value="key:YVHJ:OK" location="600;672" img="zeus17\dpc_rom.gif"/>
+            <button value="key:YUZO:OK" location="720;672" img="zeus17\dpc_sp_i_mikelon.gif"/>
+            <button value="key:YUZP:OK" location="840;672" img="zeus17\dpc_sm.gif"/>
+            <button value="key:YRFM:OK" location="960;672" img="zeus17\dpc_slo.gif"/>
+            <button value="key:YRFN:OK" location="1080;672" img="zeus17\dpc_sloven.gif"/>
+            <button value="key:YRFO:OK" location="240;752" img="zeus17\dpc_isp.gif"/>
+            <button value="key:YVHS:OK" location="360;752" img="zeus17\dpc_swe.gif"/>
+            <button value="key:YVHL:OK" location="480;752" img="zeus17\dpc_shwe.gif"/>
+            <button value="key:YVHN:OK" location="600;752" img="zeus17\dpc_gb.gif"/>
+            <button value="key:YREY:OK" location="720;752" img="zeus17\dpc_usa.gif"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="" text-align="left" text="" font-family="Verdana" font-size="12" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="simpleTextBox" visible="false"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="selectGrazhd">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button value="key:RU:OK" location="240;272" img="zeus17\dpc_rus.gif"/>
+            <button value="key:UA:OK" location="360;272" img="zeus17\dpc_ukr.gif"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="" text-align="left" text="" font-family="Verdana" font-size="12" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="simpleTextBox" visible="false"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="selectIsRez">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button value="key:1:OK" location="240;272" img="zeus17\dpc_yes.gif"/>
+            <button value="key:0:OK" location="360;272" img="zeus17\dpc_no.gif"/>
+            <button value="key:2:OK" location="480;272" img="zeus17\dpc_dk.gif"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="" text-align="left" text="" font-family="Verdana" font-size="12" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="simpleTextBox" visible="false"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="selectRez">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button value="key:RU:OK" location="240;272" img="zeus17\dpc_rus.gif"/>
+            <button value="key:UA:OK" location="360;272" img="zeus17\dpc_ukr.gif"/>
+            <button value="key:LV:OK" location="480;272" img="zeus17\dpc_latv.gif"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="" text-align="left" text="" font-family="Verdana" font-size="12" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="simpleTextBox" visible="false"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputCardNumber">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="" text-align="left" text="" font-family="Verdana" font-size="12" color="30;30;30" with-provider-name="true"/>
+            <label location="65;415" size="" text-align="left" text="Номер карты (16 цифр)" font-family="Verdana" font-size="12" color="30;30;30"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="MaskTextBox" mask="0000-0000-0000-0000"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputDateDDMMYYYY">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="825;40" text-align="left" text="" font-family="Verdana" font-size="11" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="MaskTextBox" mask="00.00.0000"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="inputDateMMYYYY">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Введите " font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="true" text-transform="uppercase"/>
+            <label location="65;385" size="825;40" text-align="left" text="" font-family="Verdana" font-size="11" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="MaskTextBox" mask="00.0000"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="AcceptAccount">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <labels>
+            <label location="278;230" font-family="Helvetica" font-size="26" text="Проверьте правильность данных"/>
+            <label name="account" with-provider-name="true" location="270;280" font-family="Helvetica" font-size="18" font-color="0;0;0" size="808;540" text-align="TopCenter"/>
+          </labels>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+            <img location="260;272" src="zeus17\accept_bg.png"/>
+          </images>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form type="info" bgimg="zeus17\bg_main.png" timeout="120" name="EnterMoney">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="1029;860" img="zeus17\btn-vnext.gif" value="ok"/>
+          </buttons>
+          <labels>
+            <label location="300;312" text="ПРИНЯТО:" size="350;35" font-family="Verdana" font-size="20" color="0;0;0" text-align="middleright" showCurrency="true" bgcolor="white"/>
+            <label location="300;358" text="К ЗАЧИСЛЕНИЮ:" size="350;35" font-family="Verdana" font-size="20" color="0;0;0" text-align="middleright" showCurrency="true" bgcolor="white"/>
+            <label location="300;404" text="КОМИССИЯ:" size="350;35" font-family="Verdana" font-size="20" color="0;0;0" text-align="middleright" showCurrency="true" bgcolor="white"/>
+            <label location="277;180" font-family="Helvetica" font-size="26" text="Внесите деньги по одной купюре"/>
+            <label name="amount" location="650;312" size="270;35" font-family="Verdana" font-size="20" color="0;0;0" text-align="middleright" showCurrency="true" bgcolor="white"/>
+            <label name="to_amount" location="650;358" size="270;35" font-family="Verdana" font-size="20" color="0;0;0" text-align="middleright" showCurrency="true" bgcolor="white"/>
+            <label name="comiss" location="650;404" size="270;35" font-family="Verdana" font-size="20" color="0;0;0" text-align="middleright" showCurrency="true" bgcolor="white"/>
+            <label name="achtungcomiss" location="320;470" size="720;60" font-family="Verdana" font-size="12" color="0;0;0" text-align="middleleft" bgcolor="white"/>
+            <label text="КОМИССИЯ:" location="320;560" size="560;20" font-family="Verdana" font-size="11" font-style="italic" color="0;0;0" text-align="middleleft" bgcolor="white"/>
+            <label name="textcomiss" location="320;580" size="720;160" font-family="Verdana" font-size="11" font-style="italic" color="0;0;0" text-align="topleft" bgcolor="white"/>
+            <label name="minsumm" location="988;88" size="0;0" font-family="Verdana" font-size="14" color="169;22;6" font-style="bold" text-align="topright" visible="false" bgcolor="white"/>
+            <label name="maxsumm" location="770;526" size="0;0" font-family="Verdana" font-size="14" color="169;22;6" font-style="bold" text-align="topleft" visible="false" bgcolor="white"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+            <img location="260;272" src="zeus17\accept_bg.png"/>
+          </images>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="selectPType">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button value="key:1:OK" location="530;272" img="zeus17\rs_dog.gif"/>
+            <button value="key:2:OK" location="530;422" img="zeus17\rs_card.gif"/>
+            <button value="key:3:OK" location="530;572" img="zeus17\rs_account.gif"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Выберите тип платежа" font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="false" text-transform="uppercase"/>
+            <label location="65;385" size="" text-align="left" text="" font-family="Verdana" font-size="12" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="simpleTextBox" visible="false"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="usSelectCurrency">
+          <buttons>
+            <button location="37;860" img="zeus17\btn-back.gif" value="goprev"/>
+            <button location="533;860" img="zeus17\vihod.png" value="vmenu"/>
+            <button value="key:RUR:OK" location="953;272" img="zeus17\us_currency_rur.gif"/>
+            <button value="key:USD:OK" location="953;422" img="zeus17\us_currency_usd.gif"/>
+            <button value="key:EUR:OK" location="953;572" img="zeus17\us_currency_eur.gif"/>
+          </buttons>
+          <banners>
+            <flash location="34;28" size="968;149" src="zeus17\banner_zs.png"/>
+          </banners>
+          <labels>
+            <label location="278;230" size="670;40" text-align="left" text="Выберите валюту назначения" font-family="Helvetica" font-size="24" color="0;0;0" with-edit-name="false" text-transform="uppercase"/>
+            <label location="65;385" size="" text-align="left" text="" font-family="Verdana" font-size="12" color="30;30;30" with-provider-name="true"/>
+          </labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+          </images>
+          <params>
+            <param location="260;272" size="630;85" font-family="Helvetica" font-size="42" color="0;0;0" text-align="Center" type="simpleTextBox" visible="false"/>
+          </params>
+          <prvimg location="65;272" size="138;85"/>
+        </form>
+        <form bgimg="zeus17\bg_main.png" name="thanks" timeout="5">
+          <buttons></buttons>
+          <labels></labels>
+          <images>
+            <img location="1018;30" src="zeus17\logo.png"/>
+            <img location="260;272" src="zeus17\thanks.png"/>
+          </images>
+        </form>
+      </forms>
+      <customSets>
+        <provider id="16">
+          <forms>
+            <form name="inputDigits" label="Введите номер R-кошелька" type="edit"/>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="17">
+          <forms>
+            <form name="inputDigits" label="Введите номер кошелька" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="18">
+          <forms>
+            <form name="inputDigits" label="Введите номер счета" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="19">
+          <forms>
+            <form name="inputDigits" label="Введите номер счета" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="20">
+          <forms>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="55">
+          <forms>
+            <form name="inputText" label="Введите логин или основной e-mail" type="edit"/>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="106">
+          <forms>
+            <form name="inputDigits" label="Введите номер счета" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="131">
+          <forms>
+            <form name="inputDigits" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="140">
+          <forms>
+            <form name="inputTextHelpProtokol" type="edit"/>
+            <form name="inputDateDDMMYYYY" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputDigitsHelpOKATO" type="edit"/>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="198">
+          <forms>
+            <form name="inputDigits" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="200">
+          <forms>
+            <form name="inputText" label="Введите номер договора" type="edit"/>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="201">
+          <forms>
+            <form name="inputCardNumber" label="Введите номер карты" type="edit"/>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="202">
+          <forms>
+            <form name="inputDigits" label="Введите номер счета" type="edit"/>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="203">
+          <forms>
+            <form name="inputDigits" label="Введите номер лицевого счета" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="205">
+          <forms>
+            <form name="inputDigits" label="Введите номер лицевого счета" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="218">
+          <forms>
+            <form name="inputText" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="220">
+          <forms>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="221">
+          <forms>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="inputText" label="Введите фамилию плательщика" type="edit"/>
+            <form name="inputDigits" label="Введите серию и номер паспорта РФ" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="222">
+          <forms>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="inputCardNumber" label="Введите номер карты" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="223">
+          <forms>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="inputCardNumber" label="Введите номер карты" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="246">
+          <forms>
+            <form name="inputCardNumber" label="Введите номер карты" type="edit"/>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="247">
+          <forms>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="selectCountry" label="Выберите страну выплаты" type="edit"/>
+            <form name="inputText" label="Введите фамилию отправителя" type="edit"/>
+            <form name="inputText" label="Введите имя отправителя" type="edit"/>
+            <form name="inputText" label="Введите отчество отправителя" type="edit"/>
+            <form name="selectGrazhd" label="Выберите страну гражданства" type="edit"/>
+            <form name="selectIsRez" label="Резидент" type="edit"/>
+            <form name="inputText" label="Введите фамилию получателя" type="edit"/>
+            <form name="inputText" label="Введите имя получателя" type="edit"/>
+            <form name="inputText" label="Введите отчество получателя" type="edit"/>
+            <form name="selectRez" label="Страна резидентства отправителя" type="edit"/>
+            <form name="selectRez" label="Страна резидентства получателя" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="248">
+          <forms>
+            <form name="selectPType" label="Выберите тип платежа" type="edit"/>
+            <form name="inputText" label="Введите номер карты/счета/договора" type="edit"/>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="265">
+          <forms>
+            <form name="inputText" label="Введите логин skype" type="edit"/>
+            <form name="inputPhone" label="Введите номер телефона" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+        <provider id="267">
+          <forms>
+            <form name="inputText" label="Введите номер IP" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </provider>
+      </customSets>
+      <userSets>
+        <userSet name="lp1Registration">
+          <forms>
+            <form name="ufInfo" label="" type="edit"/>
+            <form name="ufInputContact" label="" type="edit" kvName="loyalAccount"/>
+            <form name="ufInputPassword" label="" type="edit" kvName="password"/>
+            <form name="ufThanksReg" label="" type="edit"/>
+          </forms>
+        </userSet>
+        <userSet name="lp1Auth">
+          <forms>
+            <form name="ufAuthInputLogin" label="" type="edit" kvName="authAccount"/>
+            <form name="ufAuthInputPassword" label="" type="edit" kvName="authPassword"/>
+          </forms>
+        </userSet>
+      </userSets>
+      <groups>
+        <group id="1">
+          <forms>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="2">
+          <forms>
+            <form name="inputDigits" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="3">
+          <forms>
+            <form name="inputDigits" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="4">
+          <forms>
+            <form name="inputDigits" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="5">
+          <forms>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="6">
+          <forms>
+            <form name="inputText" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="7">
+          <forms>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="8">
+          <forms>
+            <form name="inputDigits" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="9">
+          <forms>
+            <form name="inputDigits" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="10">
+          <forms>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="11">
+          <forms>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="12">
+          <forms>
+            <form name="inputDigits" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="13">
+          <forms>
+            <form name="inputText" type="edit"/>
+            <form name="inputDigits" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="14">
+          <forms>
+            <form name="inputTextHelpDEK"/>
+            <form name="inputText"/>
+            <form name="inputDateMMYYYY"/>
+            <form name="inputPhone"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="15">
+          <forms>
+            <form name="inputDigits" label="Введите номер телефона" type="edit"/>
+            <form name="inputText" label="Введите ФИО плательщика" type="edit"/>
+            <form name="inputDigits" label="Введите серию и № документа" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="17">
+          <forms>
+            <form name="inputText" type="edit"/>
+            <form name="inputDigits" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputText" type="edit"/>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="18">
+          <forms>
+            <form name="inputDigits" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="19">
+          <forms>
+            <form name="inputDigits"/>
+            <form name="inputText"/>
+            <form name="inputText"/>
+            <form name="inputPhone"/>
+            <form name="usSelectCurrency"/>
+            <form name="inputDigits"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+        <group id="20">
+          <forms>
+            <form name="inputPhone" type="edit"/>
+            <form name="AcceptAccount" type="AcceptAccount"/>
+          </forms>
+        </group>
+      </groups>
+      <groupimages>
+        <group id="1" img="zeus17\others.gif"/>
+        <group id="2" img="zeus17\bank_and_money.gif"/>
+        <group id="3" img="zeus17\internet_tv.gif"/>
+        <group id="4" img="zeus17\raznoe.gif"/>
+        <group id="5" img="zeus17\mob_megafon_all.gif"/>
+        <group id="6" img="zeus17\g_games.gif"/>
+        <group id="7" img="zeus17\mob_rtk.gif" visible="false"/>
+        <group id="8" img="zeus17\g_edelstar.gif"/>
+        <group id="9" img="zeus17\g_mogordomo.gif"/>
+        <group id="10" img="zeus17\mob_skylink.gif"/>
+        <group id="11" img="zeus17\mob_smarts.gif"/>
+        <group id="12" img="zeus17\g_charity.gif"/>
+        <group id="13" img="zeus17\bank_1.gif"/>
+        <group id="14" img="zeus17\dek.gif"/>
+        <group id="15" img="zeus17\zps.gif"/>
+        <group id="16" img="zeus17\russtandart_g.gif"/>
+        <group id="17" img="zeus17\alphabank_G.gif"/>
+        <group id="18" img="zeus17\podryad_G.gif"/>
+        <group id="19" img="zeus17\unistream.gif"/>
+        <group id="20" img="zeus17\yota.gif"/>
+      </groupimages>
+      <prvimages>
+        <prv id="1" img="zeus17\mob_mts_espp.gif"/>
+        <prv id="2" img="zeus17\mob_ntk.gif"/>
+        <prv id="3" img="zeus17\mob_megafon_dv.gif"/>
+        <prv id="4" img="zeus17\tele2_n.gif"/>
+        <prv id="5" img="zeus17\mob_belline_ntk.gif"/>
+        <prv id="6" img="zeus17\mob_megafon_moscow.gif"/>
+        <prv id="7" img="zeus17\mob_megafon_sib.gif"/>
+        <prv id="8" img="zeus17\mob_megafon_pvl.gif"/>
+        <prv id="9" img="zeus17\mob_megafon_kavkaz.gif"/>
+        <prv id="10" img="zeus17\mob_megafon_sz.gif"/>
+        <prv id="11" img="zeus17\mob_megafon_centr.gif"/>
+        <prv id="12" img="zeus17\mob_megafon_ural.gif"/>
+        <prv id="13" img="zeus17\mob_megafon_center_sever.gif"/>
+        <prv id="14" img="zeus17\mob_megafon_yug.gif"/>
+        <prv id="15" img="zeus17\mob_tele2.gif"/>
+        <prv id="16" img="zeus17\webmoney.gif"/>
+        <prv id="17" img="zeus17\yandexmoney.gif"/>
+        <prv id="18" img="zeus17\monetaru.gif"/>
+        <prv id="19" img="zeus17\rbkmoney.gif"/>
+        <prv id="20" img="zeus17\mobkosh.gif"/>
+        <prv id="21" img="zeus17\int_qwerty.gif"/>
+        <prv id="22" img="zeus17\int_raduga.gif"/>
+        <prv id="23" img="zeus17\oriflame.gif"/>
+        <prv id="24" img="zeus17\faberlic.gif"/>
+        <prv id="25" img="zeus17\farpost.gif"/>
+        <prv id="26" img="zeus17\aimobilko.gif"/>
+        <prv id="27" img="zeus17\carnageru.gif"/>
+        <prv id="28" img="zeus17\lfm.gif"/>
+        <prv id="29" img="zeus17\kochkaru.gif"/>
+        <prv id="30" img="zeus17\wiw.gif"/>
+        <prv id="32" img="zeus17\rtk2.gif"/>
+        <prv id="33" img="zeus17\rtk_at.gif"/>
+        <prv id="34" img="zeus17\rtk_mtt_stk.gif"/>
+        <prv id="35" img="zeus17\rtk_mtt.gif"/>
+        <prv id="36" img="zeus17\rtk_rtk.gif"/>
+        <prv id="37" img="zeus17\aliance_telekom.gif"/>
+        <prv id="38" img="zeus17\vkontakte.gif"/>
+        <prv id="39" img="zeus17\utel.gif"/>
+        <prv id="40" img="zeus17\edelstar1.gif"/>
+        <prv id="41" img="zeus17\edelstar2.gif"/>
+        <prv id="42" img="zeus17\viva.gif"/>
+        <prv id="43" img="zeus17\virgin_connect.gif"/>
+        <prv id="44" img="zeus17\megapolis.gif"/>
+        <prv id="45" img="zeus17\ntk_voip100.gif"/>
+        <prv id="46" img="zeus17\mob_motiv.gif"/>
+        <prv id="47" img="zeus17\1gb.gif"/>
+        <prv id="48" img="zeus17\onexone.gif"/>
+        <prv id="49" img="zeus17\lansat.gif"/>
+        <prv id="50" img="zeus17\loveplanet.gif"/>
+        <prv id="51" img="zeus17\murclubru.gif"/>
+        <prv id="52" img="zeus17\pw.gif"/>
+        <prv id="53" img="zeus17\galaktika_znakomstv.gif"/>
+        <prv id="54" img="zeus17\jino.gif"/>
+        <prv id="55" img="zeus17\game_innova.gif"/>
+        <prv id="56" img="zeus17\vivatv.gif"/>
+        <prv id="57" img="zeus17\mojordomo1.gif"/>
+        <prv id="58" img="zeus17\mojordomo2.gif"/>
+        <prv id="59" img="zeus17\mojordomo3.gif"/>
+        <prv id="60" img="zeus17\mamba.gif"/>
+        <prv id="61" img="zeus17\radugatv.gif"/>
+        <prv id="62" img="zeus17\rol.gif"/>
+        <prv id="63" img="zeus17\skylink_msk.gif"/>
+        <prv id="64" img="zeus17\skylink_ek.gif"/>
+        <prv id="65" img="zeus17\skylink_spiter.gif"/>
+        <prv id="66" img="zeus17\skylink_udm.gif"/>
+        <prv id="67" img="zeus17\skylink_saratov.gif"/>
+        <prv id="68" img="zeus17\skylink_voronezh.gif"/>
+        <prv id="69" img="zeus17\skylink_kemerovo.gif"/>
+        <prv id="70" img="zeus17\skylink_chelyabinsk.gif"/>
+        <prv id="71" img="zeus17\skylink_krasnodar.gif"/>
+        <prv id="72" img="zeus17\skylink_vladimir.gif"/>
+        <prv id="73" img="zeus17\skylink_volgograd.gif"/>
+        <prv id="74" img="zeus17\skylink_omsk.gif"/>
+        <prv id="75" img="zeus17\skylink_novosibirsk.gif"/>
+        <prv id="76" img="zeus17\skylink_ryasan.gif"/>
+        <prv id="77" img="zeus17\skylink_rostov.gif"/>
+        <prv id="78" img="zeus17\skylink_ulyanovsk.gif"/>
+        <prv id="79" img="zeus17\skylink_kaluga.gif"/>
+        <prv id="80" img="zeus17\skylink_osetia.gif"/>
+        <prv id="81" img="zeus17\skylink_nnovgorod.gif"/>
+        <prv id="82" img="zeus17\skylink_kirov.gif"/>
+        <prv id="83" img="zeus17\skylink_barnaul.gif"/>
+        <prv id="84" img="zeus17\skylink_tver.gif"/>
+        <prv id="85" img="zeus17\skylink_hab.gif"/>
+        <prv id="86" img="zeus17\skylink_kaliningrad.gif"/>
+        <prv id="87" img="zeus17\smarts_ivanovo.gif"/>
+        <prv id="88" img="zeus17\smarts_yaroslavl.gif"/>
+        <prv id="89" img="zeus17\smarts_penza.gif"/>
+        <prv id="90" img="zeus17\smarts_astrahan.gif"/>
+        <prv id="92" img="zeus17\smarts_volgograd.gif"/>
+        <prv id="93" img="zeus17\smarts_samara.gif"/>
+        <prv id="94" img="zeus17\smarts_sh.gif"/>
+        <prv id="95" img="zeus17\troecarstvie2.gif"/>
+        <prv id="96" img="zeus17\rbkhost.gif"/>
+        <prv id="97" img="zeus17\enforta.gif"/>
+        <prv id="98" img="zeus17\int_labit.gif"/>
+        <prv id="99" img="zeus17\int_vostoktelecom.gif"/>
+        <prv id="100" img="zeus17\2pay.gif"/>
+        <prv id="101" img="zeus17\mob_sipnet.gif"/>
+        <prv id="102" img="zeus17\bloodyworld2.gif"/>
+        <prv id="103" img="zeus17\timezero2.gif"/>
+        <prv id="104" img="zeus17\mob_goodline.gif"/>
+        <prv id="105" img="zeus17\eztalk.gif"/>
+        <prv id="106" img="zeus17\wiweb.gif"/>
+        <prv id="107" img="zeus17\ruslink.gif"/>
+        <prv id="108" img="zeus17\heliosnet.gif"/>
+        <prv id="109" img="zeus17\lastchaos.gif"/>
+        <prv id="110" img="zeus17\neverlands.gif"/>
+        <prv id="111" img="zeus17\rappelz.gif"/>
+        <prv id="113" img="zeus17\silkroad.gif"/>
+        <prv id="114" img="zeus17\spaceweb.gif"/>
+        <prv id="115" img="zeus17\zimacom.gif"/>
+        <prv id="116" img="zeus17\allo_incognito.gif"/>
+        <prv id="117" img="zeus17\analiz_familii.gif"/>
+        <prv id="118" img="zeus17\bwc_gsm.gif"/>
+        <prv id="119" img="zeus17\vostochnyj_ekspress.gif"/>
+        <prv id="121" img="zeus17\geroivid.gif"/>
+        <prv id="122" img="zeus17\greenpeace.gif"/>
+        <prv id="123" img="zeus17\osada.gif"/>
+        <prv id="124" img="zeus17\parapa.gif"/>
+        <prv id="125" img="zeus17\lfp.gif"/>
+        <prv id="126" img="zeus17\piratia.gif"/>
+        <prv id="127" img="zeus17\stranasmesharikov_shararam.gif"/>
+        <prv id="128" img="zeus17\sferapererozdenie.gif"/>
+        <prv id="129" img="zeus17\game_tankionline.gif"/>
+        <prv id="130" img="zeus17\fragoria.gif"/>
+        <prv id="133" img="zeus17\avon.gif"/>
+        <prv id="134" img="zeus17\int_vladlink.gif"/>
+        <prv id="135" img="zeus17\podryad_inet.gif"/>
+        <prv id="136" img="zeus17\maxim.gif"/>
+        <prv id="137" img="zeus17\game_wot.gif"/>
+        <prv id="138" img="zeus17\podryad_ktv.gif"/>
+        <prv id="139" img="zeus17\marykay.gif"/>
+        <prv id="140" img="zeus17\shtraf_pdd.gif"/>
+        <prv id="141" img="zeus17\vebank.gif"/>
+        <prv id="142" img="zeus17\zapsibkombank.gif"/>
+        <prv id="143" img="zeus17\nomosbank.gif"/>
+        <prv id="144" img="zeus17\tinkoff_cs.gif"/>
+        <prv id="145" img="zeus17\tkb.gif"/>
+        <prv id="146" img="zeus17\alpha_card.gif"/>
+        <prv id="147" img="zeus17\alpha_account.gif"/>
+        <prv id="148" img="zeus17\pervomaiskyi.gif"/>
+        <prv id="149" img="zeus17\resocredit.gif"/>
+        <prv id="150" img="zeus17\handy_co.gif"/>
+        <prv id="151" img="zeus17\handy_card.gif"/>
+        <prv id="152" img="zeus17\vitas_deposit.gif"/>
+        <prv id="153" img="zeus17\vitas_card.gif"/>
+        <prv id="154" img="zeus17\vitas_account.gif"/>
+        <prv id="155" img="zeus17\vtb24.gif"/>
+        <prv id="156" img="zeus17\gpb.gif"/>
+        <prv id="158" img="zeus17\amibank.gif"/>
+        <prv id="159" img="zeus17\crediteuropa.gif"/>
+        <prv id="160" img="zeus17\raiffeisen.gif"/>
+        <prv id="161" img="zeus17\express_volga.gif"/>
+        <prv id="162" img="zeus17\sovbank.gif"/>
+        <prv id="163" img="zeus17\citybank.gif"/>
+        <prv id="164" img="zeus17\unicreditbank.gif"/>
+        <prv id="165" img="zeus17\moscommerse.gif"/>
+        <prv id="166" img="zeus17\neft_aliance.gif"/>
+        <prv id="167" img="zeus17\sdm.gif"/>
+        <prv id="168" img="zeus17\kitfinans.gif"/>
+        <prv id="170" img="zeus17\trustbank.gif"/>
+        <prv id="173" img="zeus17\bankmoskvy.gif"/>
+        <prv id="174" img="zeus17\binbank.gif"/>
+        <prv id="175" img="zeus17\bystrobank.gif"/>
+        <prv id="176" img="zeus17\vbrr.gif"/>
+        <prv id="177" img="zeus17\vuz_bank.gif"/>
+        <prv id="178" img="zeus17\lkb.gif"/>
+        <prv id="179" img="zeus17\MDMBank.gif"/>
+        <prv id="180" img="zeus17\moscowcreditbank.gif"/>
+        <prv id="181" img="zeus17\sberbank.gif"/>
+        <prv id="182" img="zeus17\swedbank.gif"/>
+        <prv id="183" img="zeus17\skbbank.gif"/>
+        <prv id="184" img="zeus17\smpbank.gif"/>
+        <prv id="185" img="zeus17\sobinbank.gif"/>
+        <prv id="186" img="zeus17\transcredit.gif"/>
+        <prv id="187" img="zeus17\uralsib.gif"/>
+        <prv id="188" img="zeus17\avangard.gif"/>
+        <prv id="189" img="zeus17\probusiness.gif"/>
+        <prv id="190" img="zeus17\rosbank.gif"/>
+        <prv id="191" img="zeus17\agroprom.gif"/>
+        <prv id="192" img="zeus17\regcredbank.gif"/>
+        <prv id="197" img="zeus17\homecredit.gif"/>
+        <prv id="198" img="zeus17\otpbank.gif"/>
+        <prv id="199" img="zeus17\promsvyazbank.gif"/>
+        <prv id="200" img="zeus17\russtandart_dog.gif"/>
+        <prv id="201" img="zeus17\russtandart_card.gif"/>
+        <prv id="202" img="zeus17\russtandart_account.gif"/>
+        <prv id="203" img="zeus17\mob_mts_acc.gif"/>
+        <prv id="204" img="zeus17\royal_canin.gif"/>
+        <prv id="205" img="zeus17\yota_internet.gif"/>
+        <prv id="206" img="zeus17\dek_ars.gif"/>
+        <prv id="207" img="zeus17\dek_art.gif"/>
+        <prv id="208" img="zeus17\dek_dal.gif"/>
+        <prv id="209" img="zeus17\dek_has.gif"/>
+        <prv id="210" img="zeus17\dek_kav.gif"/>
+        <prv id="211" img="zeus17\dek_les.gif"/>
+        <prv id="212" img="zeus17\dek_nah.gif"/>
+        <prv id="213" img="zeus17\dek_par.gif"/>
+        <prv id="214" img="zeus17\dek_spa.gif"/>
+        <prv id="215" img="zeus17\dek_uss.gif"/>
+        <prv id="216" img="zeus17\dek_vla.gif"/>
+        <prv id="217" img="zeus17\dek_bkm.gif"/>
+        <prv id="218" img="zeus17\odnoklassniki.gif"/>
+        <prv id="219" img="zeus17\moy_mir.gif"/>
+        <prv id="220" img="zeus17\qiwi.gif"/>
+        <prv id="221" img="zeus17\beeline_uz.gif"/>
+        <prv id="222" img="zeus17\mastercard.gif"/>
+        <prv id="223" img="zeus17\visa.gif"/>
+        <prv id="224" img="zeus17\activ_kz.gif"/>
+        <prv id="225" img="zeus17\beeline_kz.gif"/>
+        <prv id="226" img="zeus17\kcell.gif"/>
+        <prv id="227" img="zeus17\megacom.gif"/>
+        <prv id="228" img="zeus17\neo_kz.gif"/>
+        <prv id="229" img="zeus17\armentel.gif"/>
+        <prv id="230" img="zeus17\beeline_ge.gif"/>
+        <prv id="231" img="zeus17\beeline_kg.gif"/>
+        <prv id="232" img="zeus17\babilon.gif"/>
+        <prv id="233" img="zeus17\indigo.gif"/>
+        <prv id="234" img="zeus17\mts_ar.gif"/>
+        <prv id="235" img="zeus17\mts_by.gif"/>
+        <prv id="236" img="zeus17\megafon_tj.gif"/>
+        <prv id="237" img="zeus17\nurtelecom.gif"/>
+        <prv id="238" img="zeus17\beeline_tj.gif"/>
+        <prv id="239" img="zeus17\drom.gif"/>
+        <prv id="240" img="zeus17\primvodokanal.gif"/>
+        <prv id="241" img="zeus17\warface.gif"/>
+        <prv id="242" img="zeus17\biglion_acc.gif"/>
+        <prv id="243" img="zeus17\biglion_phone.gif"/>
+        <prv id="244" img="zeus17\crossfire.gif"/>
+        <prv id="246" img="zeus17\tcs_card.gif"/>
+        <prv id="247" img="zeus17\dp_contact.gif"/>
+        <prv id="248" img="zeus17\russtandart.gif"/>
+        <prv id="249" img="zeus17\steam.gif"/>
+        <prv id="250" img="zeus17\gaijin.gif"/>
+        <prv id="251" img="zeus17\warthunder.gif"/>
+        <prv id="252" img="zeus17\us_russia.gif"/>
+        <prv id="253" img="zeus17\us_armenia.gif"/>
+        <prv id="254" img="zeus17\us_georgia.gif"/>
+        <prv id="255" img="zeus17\us_kirgizia.gif"/>
+        <prv id="256" img="zeus17\us_tadj.gif"/>
+        <prv id="257" img="zeus17\us_uz.gif"/>
+        <prv id="258" img="zeus17\us_kz.gif"/>
+        <prv id="259" img="zeus17\us_ukr.gif"/>
+        <prv id="260" img="zeus17\us_moldova.gif"/>
+        <prv id="261" img="zeus17\us_bel.gif"/>
+        <prv id="262" img="zeus17\us_abhaziya.gif"/>
+        <prv id="263" img="zeus17\us_litva.gif"/>
+        <prv id="264" img="zeus17\us_latv.gif"/>
+        <prv id="265" img="zeus17\skype.gif"/>
+        <prv id="266" img="zeus17\yota_mob.gif"/>
+        <prv id="267" img="zeus17\vltelecom.gif"/>
+        <prv id="268" img="zeus17\redcom.gif"/>
+      </prvimages>
+      <information>
+        <forms>
+          <form id="" bgimg="zeus17\i_aboutterminal_z.gif">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="32;200" img="zeus17\i_b_terminal_c.png" value="goform:"/>
+              <button location="32;289" img="zeus17\i_b_forclient.png" value="goform:forclient"/>
+              <button location="32;378" img="zeus17\i_b_oferta.png" value="goform:oferta"/>
+              <button location="37;860" img="zeus17\btn-back.gif" value="vmenu"/>
+            </buttons>
+            <labels>
+              <label location="459;207" font-family="Arial" font-size="14" font-style="bold" color="0;0;0">
+                Номер терминала: [terminal.id]
+                Адрес: [terminal.adress] 
+                Наименование исполнителя: [agent.name] 
+                Контактный телефон: [agent.supportphone]
+              </label>
+            </labels>
+          </form>
+          <form id="forclient" bgimg="zeus17\i_aboutterminal_z.gif">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="32;200" img="zeus17\i_b_terminal.png" value="goform:"/>
+              <button location="32;289" img="zeus17\i_b_forclient_c.png" value="goform:forclient"/>
+              <button location="32;378" img="zeus17\i_b_oferta.png" value="goform:oferta"/>
+              <button location="37;860" img="zeus17\btn-back.gif" value="vmenu"/>
+            </buttons>
+            <labels>
+              <label location="459;207" size="782;570" font-family="Arial" font-size="14" color="0;0;0">
+                Обязательства плательщика перед провайдером считаются исполненными с момента внесения им наличных денежных средств в терминал. Обязательно сохраняйте квитанцию, являющуюся подтверждением совершения платежа. В случае, если Вы по ошибке указали неправильный номер, перепутали наименование провайдера либо не смогли удостовериться в корректном проведении платежа, обратитесь в службу поддержки по телефону: [agent.supportphone]
+              </label>
+            </labels>
+          </form>
+          <form id="oferta" bgimg="zeus17\i_aboutterminal_z.gif">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="32;200" img="zeus17\i_b_terminal.png" value="goform:"/>
+              <button location="32;289" img="zeus17\i_b_forclient.png" value="goform:forclient"/>
+              <button location="32;378" img="zeus17\i_b_oferta_c.png" value=""/>
+              <button location="450;780" img="zeus17\i_b_str1_c.gif"/>
+              <button location="600;780" img="zeus17\i_b_str2.gif" value="goform:oferta2"/>
+              <button location="750;780" img="zeus17\i_b_str3.gif" value="goform:oferta3"/>
+              <button location="900;780" img="zeus17\i_b_str4.gif" value="goform:oferta4"/>
+              <button location="1050;780" img="zeus17\i_b_str5.gif" value="goform:oferta5"/>
+              <button location="37;860" img="zeus17\btn-back.gif" value="vmenu"/>
+            </buttons>
+            <labels>
+              <label location="459;207" size="782;570" font-family="Arial" font-size="11" color="0;0;0">
+                ДОГОВОР - ПУБЛИЧНАЯ ОФЕРТА (часть 1) о предоставлении услуг по обеспечению информационного и технологического взаимодействия между участниками расчетов с помощью автомата самообслуживания 1. ОБЩИЕ ПОЛОЖЕНИЯ. 1.1. Настоящий документ является публичной офертой (далее - "Оферта") в соответствии с п.2 ст.437 Гражданского кодекса Российской Федерации. 1.2. Исполнителем по настоящей оферте является: Наименование: [agent.name] Адрес: [agent.jur_adress] Телефон: [agent.supportphone] Банковские реквизиты: [agent.bank] Ф.И.О руководителя:
+              </label>
+            </labels>
+          </form>
+          <form id="oferta2" bgimg="zeus17\i_aboutterminal_z.gif">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="32;200" img="zeus17\i_b_terminal.png" value="goform:"/>
+              <button location="32;289" img="zeus17\i_b_forclient.png" value="goform:forclient"/>
+              <button location="32;378" img="zeus17\i_b_oferta_c.png" value=""/>
+              <button location="450;780" img="zeus17\i_b_str1.gif" value="goform:oferta"/>
+              <button location="600;780" img="zeus17\i_b_str2_c.gif"/>
+              <button location="750;780" img="zeus17\i_b_str3.gif" value="goform:oferta3"/>
+              <button location="900;780" img="zeus17\i_b_str4.gif" value="goform:oferta4"/>
+              <button location="1050;780" img="zeus17\i_b_str5.gif" value="goform:oferta5"/>
+              <button location="37;860" img="zeus17\btn-back.gif" value="vmenu"/>
+            </buttons>
+            <labels>
+              <label location="459;207" size="782;570" font-family="Arial" font-size="11" color="0;0;0">
+                ДОГОВОР - ПУБЛИЧНАЯ ОФЕРТА (часть 2) 1.3. Оферта содержит все существенные условия договора о предоставлении услуг по обеспечению информационного и технологического взаимодействия между участниками расчетов за услуги поставщика (провайдера) с помощью настоящего программно-технического комплекса (автомата самообслуживания) и выражает волю Исполнителя заключить договор на изложенных в оферте условиях с любым лицом, безусловно принимающим указанные условия (далее - "Клиент"). 1.4. Услугами по обеспечению информационного и технологического взаимодействия между участниками расчетов с помощью автомата самообслуживания (далее - "Услуги") являются: - предоставление Клиенту возможности совершить платеж в пользу любого провайдера из списка, указанного в интерфейсе настоящего автомата самообслуживания; - автоматическое формирование реквизитов, необходимых для передачи данных о платеже Провайдеру, на основании введенного Клиентом идентификатора (номер телефона, номер счета, номер договора или другой тип данных, указанный на соответствующей странице осуществления транзакции в интерфейсе автомата самообслуживания); - обеспечение передачи информации о платеже провайдеру в кратчайшие сроки, обусловленные техническими возможностями автомата самообслуживания и используемых Исполнителем внешних сетей передачи данных (срок передачи данных в пользу отдельных провайдеров может составлять 24 часа - информация об этом указана на соответствующей странице осуществления транзакции в интерфейсе автомата самообслуживания).
+              </label>
+            </labels>
+          </form>
+          <form id="oferta3" bgimg="zeus17\i_aboutterminal_z.gif">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="32;200" img="zeus17\i_b_terminal.png" value="goform:"/>
+              <button location="32;289" img="zeus17\i_b_forclient.png" value="goform:forclient"/>
+              <button location="32;378" img="zeus17\i_b_oferta_c.png" value=""/>
+              <button location="450;780" img="zeus17\i_b_str1.gif" value="goform:oferta"/>
+              <button location="600;780" img="zeus17\i_b_str2.gif " value="goform:oferta2"/>
+              <button location="750;780" img="zeus17\i_b_str3_c.gif"/>
+              <button location="900;780" img="zeus17\i_b_str4.gif" value="goform:oferta4"/>
+              <button location="1050;780" img="zeus17\i_b_str5.gif" value="goform:oferta5"/>
+              <button location="37;860" img="zeus17\btn-back.gif" value="vmenu"/>
+            </buttons>
+            <labels>
+              <label location="459;207" size="782;570" font-family="Arial" font-size="11" color="0;0;0">
+                ДОГОВОР - ПУБЛИЧНАЯ ОФЕРТА (часть 2,3) 2.1. Действия Клиента по использованию автомата самообслуживания для передачи провайдеру данных о платеже на основе указанных Клиентом реквизитов рассматриваются как полный и безоговорочный акцепт оферты Исполнителя путем совершения конклюдентных действий, в соответствии с п.3 ст.438 ГК РФ. Каждый факт передачи данных о платеже с использованием автомата самообслуживания является отдельной сделкой с Исполнителем, совершаемой на указанных в оферте условиях. 2.2. Клиент обязан изучить и соблюдать инструкцию по использованию автомата самообслуживания (Инструкция). Совершение Клиентом действий, не предусмотренных Инструкцией, не является основанием для возникновения у Исполнителя обязательств по оказанию Услуг. В случае несогласия с условиями договора или непонимания требований Инструкции Клиент не вправе использовать автомат самообслуживания для совершения любых действий, как предусмотренных, так и не предусмотренных Инструкцией. 2.3. Клиент обязан сохранять выданную автоматом квитанцию об оказании Услуг вплоть до получения от провайдера информации о пополнении счета. 3. СТОИМОСТЬ УСЛУГ. 3.1. Стоимость Услуг определяется Исполнителем в процентном соотношении от суммы внесенного Клиентом платежа и может изменяться в зависимости от времени совершения платежа, суммы платежа, а также иных условий совершения платежа, определенных конкретным провайдером. При этом Исполнитель информирует Клиента о стоимости Услуги до совершения платежа (информация о стоимости услуги указана на соответствующей странице осуществления транзакции в интерфейсе автомата самообслуживания). Клиент вправе отказаться от Услуги в любой момент до внесения денежных средств в купюроприемник автомата самообслуживания. 3.2. Оплата Услуг производится путем удержания Исполнителем стоимости Услуг из сумм, внесенных Клиентом в автомат самообслуживания. 3.3. Факт оказания и оплаты Услуг подтверждается соответствующим документом (квитанцией автомата самообслуживания).
+              </label>
+            </labels>
+          </form>
+          <form id="oferta4" bgimg="zeus17\i_aboutterminal_z.gif">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="32;200" img="zeus17\i_b_terminal.png" value="goform:"/>
+              <button location="32;289" img="zeus17\i_b_forclient.png" value="goform:forclient"/>
+              <button location="32;378" img="zeus17\i_b_oferta_c.png" value=""/>
+              <button location="450;780" img="zeus17\i_b_str1.gif" value="goform:oferta"/>
+              <button location="600;780" img="zeus17\i_b_str2.gif " value="goform:oferta2"/>
+              <button location="750;780" img="zeus17\i_b_str3.gif" value="goform:oferta3"/>
+              <button location="900;780" img="zeus17\i_b_str4_c.gif"/>
+              <button location="1050;780" img="zeus17\i_b_str5.gif" value="goform:oferta5"/>
+              <button location="37;860" img="zeus17\btn-back.gif" value="vmenu"/>
+            </buttons>
+            <labels>
+              <label location="459;207" size="782;570" font-family="Arial" font-size="11" color="0;0;0">
+                ДОГОВОР - ПУБЛИЧНАЯ ОФЕРТА (часть 4) 4. ОСОБЫЕ УСЛОВИЯ. 4.1. Исполнитель имеет право временно прекратить оказание Услуг при отсутствии технологической возможности осуществлять взаимодействие между участниками расчетов. 4.2. Исполнитель не несет ответственности за прямой или косвенный ущерб, возникший у Клиента вследствие использования автомата самообслуживания. Исполнитель не несет ответственности за перерывы в предоставлении Услуг в случае сбоев программного обеспечения или поломок оборудования, не принадлежащего Исполнителю. Исполнитель не несет ответственности за полные или частичные перерывы в предоставлении Услуг, связанные с заменой оборудования, программного обеспечения или проведения других работ, вызванных необходимостью поддержания работоспособности и модернизации программного и/или аппаратного обеспечения. 4.3. Клиент вправе предъявлять Исполнителю претензии в письменной форме, связанные с качеством и сроками оказания Услуг, не позднее трех дней с даты получения квитанции. Срок рассмотрения претензий Исполнителем составляет не более десяти календарных дней. 4.4. Условия предоставления услуг могут изменяться Исполнителем и доводятся до сведения Клиента до момента совершения и оплаты Услуг. 4.5. Воспользовавшись Услугой, Клиент подтверждает согласие на получение сообщений рекламного и иного характера по сетям электросвязи, в том числе на телефонный номер, указанный Клиентом при оплате услуг Провайдера. 4.6 Клиент вправе обратиться в Клиентскую справочную службу по телефону, указанному на квитанции об оказании Услуг, для проверки состояния внесенного платежа, а также с целью перепроведения платежа. Срок рассмотрения претензий Клиентской справочной службой составляет не более 60(Шестидесяти) календарных дней с момента обращения Клиента.
+              </label>
+            </labels>
+          </form>
+          <form id="oferta5" bgimg="zeus17\i_aboutterminal_z.gif">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="32;200" img="zeus17\i_b_terminal.png" value="goform:"/>
+              <button location="32;289" img="zeus17\i_b_forclient.png" value="goform:forclient"/>
+              <button location="32;378" img="zeus17\i_b_oferta_c.png" value=""/>
+              <button location="450;780" img="zeus17\i_b_str1.gif" value="goform:oferta"/>
+              <button location="600;780" img="zeus17\i_b_str2.gif " value="goform:oferta2"/>
+              <button location="750;780" img="zeus17\i_b_str3.gif" value="goform:oferta3"/>
+              <button location="900;780" img="zeus17\i_b_str4.gif" value="goform:oferta4"/>
+              <button location="1050;780" img="zeus17\i_b_str5_c.gif"/>
+              <button location="37;860" img="zeus17\btn-back.gif" value="vmenu"/>
+            </buttons>
+            <labels>
+              <label location="459;207" size="782;570" font-family="Arial" font-size="11" color="0;0;0">
+                ДОГОВОР - ПУБЛИЧНАЯ ОФЕРТА (часть 4) 4.6.1. При обращении в Клиентскую справочную службу Клиент обязан сообщить оператору дату, сумму, индентификатор платежа, а также номер транзакции (все эти данные указаны в квитанции об оказании Услуг). 4.6.2. Оператор Клиентской справочной службы в течение 10 минут с момента обращения Клиента предоставляет Клиенту данные о статусе платежа. При отсутствии возможности предоставить данные о статусе платежа в указанный срок по техническим причинам, оператор Клиентской справочной службы сообщает Клиенту иной срок, в течение которого Клиенту могут быть предоставлены данные о статусе платежа. 4.6.3. В случае если платеж не принят Провайдером, оператор Клиентской справочной службы по запросу Клиента осуществляет процедуру перепроведения платежа в течение 7 (Семи) дней с момента обращения Клиента. При невозможности осуществления процедуры перепроведения платежа, а также при повторном не принятии платежа Провайдером, оператор Клиентской справочной службы по запросу Клиента осуществляет проведение платежа в пользу иного Провайдера (размещенного в интерфейсе автомата самообслуживания), указанного Клиентом. 4.6.4. В случае если платеж принят Провайдером, но содержит ошибочные идентификационные данные Клиента либо сумму Платежа, оператор Клиентской справочной службы по запросу Клиента в течение 1 (Одного) дня с момента обращения Клиента направляет Провайдеру заявку на корректировку либо отмену платежа. Оператор Клиентской справочной службы отказывает Клиенту в направлении заявки на корректировку либо отмену платежа, если данный сервис не предоставляется Клиентской справочной службой в отношении Провайдера, в пользу которого был совершен платеж. Срок рассмотрения заявки Провайдером составляет не более 60(Шестидесяти) календарных дней с момента ее получения от Клиентской справочной службы. Провайдер вправе отказать Клиентской справочной службе в отмене или корректировке платежа без объяснения причин. В случае отказа Провайдера в отмене или корректировке платежа, Клиент вправе обратиться о проведении корректировки или отмены платежа непосредственно к Провайдеру.
+              </label>
+            </labels>
+          </form>
+          <form id="paysystem" bgimg="zeus17\i_aboutterminal_z.gif">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="18;112" img="zeus17\i_b_terminal.png" value="goform:"/>
+              <button location="18;224" img="zeus17\i_b_forclient.png" value="goform:forclient"/>
+              <button location="18;335" img="zeus17\i_b_oferta_c.png" value=""/>
+              <button location="11;895" img="zeus17\back.gif" value="vmenu"/>
+            </buttons>
+            <labels>
+              <label location="459;207" size="782;570" font-family="Arial" font-size="11" color="0;0;0"></label>
+            </labels>
+          </form>
+          <form id="bank" bgimg="zeus17\i_aboutterminal_z.gif">
+            <buttons>
+              <button location="1018;30" img="zeus17\logo.png"/>
+              <button location="18;112" img="zeus17\i_b_terminal.png" value="goform:"/>
+              <button location="18;224" img="zeus17\i_b_forclient.png" value="goform:forclient"/>
+              <button location="18;335" img="zeus17\i_b_oferta_c.png" value=""/>
+              <button location="11;895" img="zeus17\back.gif" value="vmenu"/>
+            </buttons>
+            <labels>
+              <label location="428;180" size="810;540" font-family="Arial" font-size="11" color="0;0;0"></label>
+            </labels>
+          </form>
+        </forms>
+      </information>
+    </interface>
+  </interfaceList>
+</interfaceList>
